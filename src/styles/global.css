@@ -1,11 +1,23 @@
+@font-face {
+  font-family: "Open-sans";
+  src: url("/Fonts/OpenSans.ttf");
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: "Open-sans-italic";
+  src: url("/Fonts/OpenSans-Italic.ttf");
+  font-weight: 100 900;
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Open-sans";
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* color-scheme: light dark;
+  color: #fafafa;
+  background-color: #242424; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,4 +30,42 @@
   margin: 0;
   border: none;
   box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(11, 20, 26, 0.2) transparent;
+}
+
+html[data-color-mode="dark"] {
+  color-scheme: dark;
+
+  /*Backgrounds Color Schemes*/
+  --bg-page: #161717;
+
+  /*Text Color Schemes*/
+  --text-primary: #fafafa;
+}
+
+html[data-color-mode="light"] {
+  color-scheme: light;
+
+  /*Backgrounds Color Schemes*/
+  --bg-page: #fafafa;
+
+  /*Text Color Schemes*/
+  --text-primary: #161717;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6em;
+  background: var(--bg-page);
+  color: var(--text-primary);
 }
