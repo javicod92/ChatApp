@@ -13,16 +13,26 @@
 :root {
   font-family: "Open-sans";
   line-height: 1.5;
-  font-weight: 400;
-
-  /* color-scheme: light dark;
-  color: #fafafa;
-  background-color: #242424; */
+  font-weight: 100;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* ========== Colors Pallette ==========*/
+  --white: #ffffff;
+  --white-rgb: 255, 255, 255;
+  --black: #000000;
+
+  --gray-100: #fafafa;
+  --gray-700: #1d1f1f;
+  --gray-800: #161717;
+  --gray-900: #0a0a0a;
+
+  --green-500: #21c063;
+  --green-700: #144d37;
+  --green-800: #103529;
 }
 
 * {
@@ -31,31 +41,36 @@
   border: none;
   box-sizing: border-box;
   scrollbar-width: thin;
-  scrollbar-color: rgba(11, 20, 26, 0.2) transparent;
+  scrollbar-color: #0b141a33 transparent;
 }
 
 html[data-color-mode="dark"] {
   color-scheme: dark;
 
-  /*Backgrounds Color Schemes*/
-  --bg-page: #161717;
+  /* Page */
+  --bg-page: var(--gray-900);
+  --text-primary: var(--gray-100);
 
-  /*Text Color Schemes*/
-  --text-primary: #fafafa;
+  /* SideBar */
+  --sidebar-background: var(--gray-700);
+  --nav-buttons-text-color: var(--white-rgb);
+  --nav-buttons-hover-color: var(--white-rgb);
+  --nav-divider-icon-color: var(--white-rgb);
+
+  /* Buttons */
 }
 
 html[data-color-mode="light"] {
   color-scheme: light;
 
-  /*Backgrounds Color Schemes*/
-  --bg-page: #fafafa;
-
-  /*Text Color Schemes*/
-  --text-primary: #161717;
+  /* Page */
+  --bg-page: var(--gray-100);
+  --text-primary: var(--gray-900);
 }
 
 html,
-body {
+body,
+#root {
   height: 100%;
   width: 100%;
 }
@@ -68,4 +83,9 @@ body {
   font-size: 1.6em;
   background: var(--bg-page);
   color: var(--text-primary);
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
 }
