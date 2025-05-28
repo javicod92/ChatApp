@@ -1,5 +1,5 @@
 // IconGallery.tsx
-import * as Icons from "./components/ui/icons";
+import * as Icons from "./components/ui/Icons";
 console.log(Object.entries(Icons));
 
 const IconGallery = () => (

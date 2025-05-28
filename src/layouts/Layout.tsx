@@ -1,4 +1,4 @@
-import { Sidebar } from "../components/composites/sidebar";
+import Sidebar from "../components/composites/Sidebar";
 import styles from "./Layout.module.css";
 
 export default function Layout() {

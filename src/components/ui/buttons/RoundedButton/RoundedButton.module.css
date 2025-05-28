@@ -20,7 +20,8 @@
   color: inherit;
 }
 
-.roundButton:hover {
+.roundButton:hover,
+.roundButton--selected {
   background-color: rgba(var(--nav-buttons-hover-color), 0.05);
 }
 
