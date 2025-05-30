@@ -69,6 +69,7 @@ html[data-color-mode="dark"] {
   /* Search Bar */
   --bg-search-bar-color: rgba(var(--white-rgb), 0.1);
   --searchbar-text-color: rgba(var(--white-rgb), 0.6);
+  --searchbar-inset-borderColor: var(--green-500);
 }
 
 html[data-color-mode="light"] {
