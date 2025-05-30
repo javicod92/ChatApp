@@ -3,6 +3,8 @@
   max-width: 64px;
   background: var(--sidebar-background);
   padding: 10px 12px;
+  position: relative;
+  z-index: 200;
 }
 
 .sidebarContent {

@@ -1,0 +1,18 @@
+.chatListContainer {
+  width: 30%;
+  max-width: 566px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--conversation-header-border);
+  flex-wrap: nowrap;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.chatListWrapper {
+}

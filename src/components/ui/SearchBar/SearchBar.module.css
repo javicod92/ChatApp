@@ -1,0 +1,29 @@
+.searchBarContainer {
+  padding: 0 20px;
+  margin-bottom: 5px;
+}
+
+.searchWrapper {
+  width: 100%;
+  background-color: var(--bg-search-bar-color);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  display: flex;
+  align-items: center;
+  color: var(--searchbar-text-color);
+  cursor: default;
+}
+
+.searcInputWrapper {
+  height: 40px;
+  width: 100%;
+  padding-left: 46px;
+}

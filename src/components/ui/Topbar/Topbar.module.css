@@ -1,0 +1,16 @@
+.topbarContent {
+  display: block;
+  height: 64px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-topbar-color);
+  flex-wrap: nowrap;
+}
+
+.topbarwrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
