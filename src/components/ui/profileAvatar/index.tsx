@@ -1,7 +1,7 @@
 import styles from "./ProfileAvatar.module.css";
 
 type ProfileProps = {
-  size?: "small" | "medium";
+  size?: "small" | "medium" | "large";
   url: string;
 };
 

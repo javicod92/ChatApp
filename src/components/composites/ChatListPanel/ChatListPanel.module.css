@@ -1,4 +1,4 @@
-.chatListContainer {
+.sidebar {
   width: 30%;
   max-width: 566px;
   min-width: 350px;
@@ -9,13 +9,13 @@
   flex-wrap: nowrap;
 }
 
-.logoContainer {
+.logo {
   display: flex;
   align-items: center;
   height: 100%;
 }
 
-.chatListWrapper {
+.content {
   display: flex;
   position: relative;
   flex-direction: column;

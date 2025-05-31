@@ -10,7 +10,7 @@
   font-weight: 400;
 }
 
-.buttonContainer:hover {
+.buttonContainer:hover:not(.selected) {
   background-color: var(--pill-hover-bg);
 }
 

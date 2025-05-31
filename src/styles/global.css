@@ -1,17 +1,17 @@
 @font-face {
-  font-family: "Open-sans";
-  src: url("/Fonts/OpenSans.ttf");
+  font-family: "Inter";
+  src: url("/Fonts/Inter.ttf");
   font-weight: 100 900;
 }
 
 @font-face {
-  font-family: "Open-sans-italic";
-  src: url("/Fonts/OpenSans-Italic.ttf");
+  font-family: "Inter-italic";
+  src: url("/Fonts/InterItalic.ttf");
   font-weight: 100 900;
 }
 
 :root {
-  font-family: "Open-sans";
+  font-family: "Inter", "Segoe UI", Roboto;
   line-height: 1.5;
   font-weight: 100;
 
