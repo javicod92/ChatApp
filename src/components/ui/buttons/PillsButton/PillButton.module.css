@@ -1,0 +1,19 @@
+.buttonContainer {
+  width: fit-content;
+  text-wrap: nowrap;
+  padding: 6px 12px;
+  font-size: 1.5rem;
+  border-radius: 9999px;
+  box-shadow: inset 0 0 0 1px var(--pill-buttons-border-color);
+  color: var(--pill-buttontext-color);
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.buttonContainer:hover {
+  background-color: var(--pill-hover-bg);
+}
+
+.selected {
+  background-color: var(--pill-selected-bg);
+}

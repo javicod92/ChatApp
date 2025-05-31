@@ -14,3 +14,12 @@
   align-items: center;
   height: 100%;
 }
+
+.chatListWrapper {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--chat-list-bg);
+}

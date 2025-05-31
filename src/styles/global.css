@@ -63,13 +63,18 @@ html[data-color-mode="dark"] {
   /* Vetical Divider */
   --conversation-header-border: rgba(var(--white-rgb), 0.15);
 
-  /* Topbar */
+  /* Chat List Pannel */
   --bg-topbar-color: var(--gray-800);
 
-  /* Search Bar */
   --bg-search-bar-color: rgba(var(--white-rgb), 0.1);
   --searchbar-text-color: rgba(var(--white-rgb), 0.6);
   --searchbar-inset-borderColor: var(--green-500);
+
+  --chat-list-bg: var(--gray-800);
+  --pill-buttons-border-color: rgba(var(--white-rgb), 0.1);
+  --pill-buttontext-color: rgba(var(--white-rgb), 0.6);
+  --pill-selected-bg: var(--green-800);
+  --pill-hover-bg: rgba(var(--white-rgb), 0.1);
 }
 
 html[data-color-mode="light"] {

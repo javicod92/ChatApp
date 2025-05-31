@@ -23,6 +23,7 @@
   top: 10px;
   left: 14px;
   color: var(--searchbar-text-color);
+  cursor: default;
 }
 
 .SearchInput {

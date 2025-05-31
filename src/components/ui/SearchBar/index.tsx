@@ -5,14 +5,11 @@ export default function SearchBar() {
   return (
     <div className={styles.SearchContainer}>
       <div className={styles.searchWrapper}>
-        <button className={styles.searchButton}>
-          <span aria-hidden="true">
-            <SearchRefreshedThin />
-          </span>
-        </button>
         <div className={styles.SearchInput}>
-          <label htmlFor="search-input" style={{ display: "none" }}>
-            Search Chat
+          <label htmlFor="search-input" className={styles.searchButton}>
+            <span aria-hidden="true">
+              <SearchRefreshedThin />
+            </span>
           </label>
           <input
             id="search-input"

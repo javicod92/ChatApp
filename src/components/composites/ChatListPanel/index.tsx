@@ -2,6 +2,7 @@ import { WhatsAppRefreshed } from "../../ui/Icons";
 import SearchBar from "../../ui/SearchBar";
 import Topbar from "../../ui/Topbar";
 import ChatlistActions from "../../ui/Topbar/components/ChatlistActions";
+import FilterChips from "../FilterChips";
 import styles from "./ChatListPanel.module.css";
 
 export default function ChatListPanel() {
@@ -18,6 +19,7 @@ export default function ChatListPanel() {
       {/* Chat lists */}
       <div className={styles.chatListWrapper}>
         <SearchBar />
+        <FilterChips />
       </div>
     </div>
   );
