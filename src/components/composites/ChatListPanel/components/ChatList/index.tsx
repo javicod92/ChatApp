@@ -16,6 +16,7 @@ export default function ChatList() {
             }
             userLastMessage={chat.chatHistory[chat.chatHistory.length - 1].text}
             isSelected={chat.isSelected}
+            messageStatus={chat.messageStatus}
           />
         ))}
       </div>

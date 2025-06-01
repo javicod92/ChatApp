@@ -8,11 +8,18 @@ type ChatcardProps = {
   userChatDate: string;
   userLastMessage: string;
   isSelected?: boolean;
+  messageStatus?: "sent" | "delivered" | "read";
 };
 
 export default function ChatCard(props: ChatcardProps) {
-  const { avatarURL, userName, userChatDate, userLastMessage, isSelected } =
-    props;
+  const {
+    avatarURL,
+    userName,
+    userChatDate,
+    userLastMessage,
+    isSelected,
+    messageStatus,
+  } = props;
   return (
     <div className={`${styles.chatCard} ${isSelected ? styles.selected : ""}`}>
       <div className={styles.avatarContainer}>
@@ -26,7 +33,11 @@ export default function ChatCard(props: ChatcardProps) {
           <div className={styles.time}>{userChatDate}</div>
         </div>
         <div className={styles.lastMessage}>
-          <div className={styles.checkIcon}>
+          <div
+            className={`${styles.checkIcon} ${
+              messageStatus === "read" ? styles.messageRead : ""
+            }`}
+          >
             <StatusdblCheck />
           </div>
           <span>{userLastMessage}</span>

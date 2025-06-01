@@ -89,3 +89,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.messageRead {
+  color: var(--cgatCard-read-color);
+}

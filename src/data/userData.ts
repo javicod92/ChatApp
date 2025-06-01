@@ -1,15 +1,16 @@
 // Definición de tipos
-type ChatMessage = {
+export type ChatMessage = {
   text: string;
   timestamp: string;
 };
 
-type WhatsAppChat = {
+export type WhatsAppChat = {
   id: number;
   contactName: string;
   chatHistory: ChatMessage[];
   userAvatar: string;
   isSelected?: boolean;
+  messageStatus?: "sent" | "delivered" | "read";
 };
 
 export const whatsappChats: WhatsAppChat[] = [
@@ -26,6 +27,7 @@ export const whatsappChats: WhatsAppChat[] = [
     ],
     userAvatar: "/Avatars/image_0000.png",
     isSelected: true,
+    messageStatus: "read",
   },
   {
     id: 2,
@@ -38,6 +40,7 @@ export const whatsappChats: WhatsAppChat[] = [
       { text: "Sí, ya lo envié por correo.", timestamp: "9:28 a.m." },
     ],
     userAvatar: "/Avatars/image_0002.png",
+    messageStatus: "read",
   },
   {
     id: 3,
@@ -77,6 +80,7 @@ export const whatsappChats: WhatsAppChat[] = [
       { text: "Sí, los tengo aquí.", timestamp: "5:38 p.m." },
     ],
     userAvatar: "/Avatars/image_0006.png",
+    messageStatus: "read",
   },
   {
     id: 7,
@@ -101,6 +105,7 @@ export const whatsappChats: WhatsAppChat[] = [
       },
     ],
     userAvatar: "/Avatars/image_0008.png",
+    messageStatus: "read",
   },
   {
     id: 9,
@@ -131,5 +136,6 @@ export const whatsappChats: WhatsAppChat[] = [
       },
     ],
     userAvatar: "/Avatars/image_0010.png",
+    messageStatus: "read",
   },
 ];

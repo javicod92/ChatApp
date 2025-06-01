@@ -33,6 +33,8 @@
   --green-500: #21c063;
   --green-700: #144d37;
   --green-800: #103529;
+
+  --message-status-read: #53bdeb;
 }
 
 * {
@@ -77,6 +79,11 @@ html[data-color-mode="dark"] {
   --pill-hover-bg: rgba(var(--white-rgb), 0.1);
 
   --chatCard-bg: rgba(var(--white-rgb), 0.1);
+  --cgatCard-read-color: var(--message-status-read);
+
+  /* Chat Body (main) */
+  --chatbody-divider-color: rgba(var(--white-rgb), 0.1);
+  --chatbody-bg-color: var(--gray-800);
 }
 
 html[data-color-mode="light"] {

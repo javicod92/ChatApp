@@ -1,0 +1,21 @@
+.chatbodyContainer {
+  height: 100%;
+  flex-grow: 1;
+  border-left: 1px solid var(--chatbody-divider-color);
+  border-right: 1px solid var(--chatbody-divider-color);
+  overflow: hidden;
+}
+
+.chatbodyWrapper {
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--chatbody-bg-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.background {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}

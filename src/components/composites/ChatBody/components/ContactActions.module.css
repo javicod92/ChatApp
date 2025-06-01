@@ -1,0 +1,10 @@
+.topProfileActions {
+  display: flex;
+  gap: 10px;
+}
+
+.actionsLargeButton {
+  padding: 0 10px;
+  display: flex;
+  gap: 4px;
+}
