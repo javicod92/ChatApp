@@ -6,6 +6,7 @@
   align-items: center;
   background-color: var(--bg-topbar-color);
   flex-wrap: nowrap;
+  flex-shrink: 0;
 }
 
 .topbarwrapper {

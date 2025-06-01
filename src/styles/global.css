@@ -75,6 +75,8 @@ html[data-color-mode="dark"] {
   --pill-buttontext-color: rgba(var(--white-rgb), 0.6);
   --pill-selected-bg: var(--green-800);
   --pill-hover-bg: rgba(var(--white-rgb), 0.1);
+
+  --chatCard-bg: rgba(var(--white-rgb), 0.1);
 }
 
 html[data-color-mode="light"] {
@@ -90,6 +92,7 @@ body,
 #root {
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 html {

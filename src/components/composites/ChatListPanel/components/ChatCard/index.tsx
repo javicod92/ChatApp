@@ -1,0 +1,37 @@
+import { StatusdblCheck } from "../../../../ui/Icons";
+import ProfileAvatar from "../../../../ui/ProfileAvatar";
+import styles from "./ChatCard.module.css";
+
+type ChatcardProps = {
+  avatarURL: string;
+  userName: string;
+  userChatDate: string;
+  userLastMessage: string;
+  isSelected?: boolean;
+};
+
+export default function ChatCard(props: ChatcardProps) {
+  const { avatarURL, userName, userChatDate, userLastMessage, isSelected } =
+    props;
+  return (
+    <div className={`${styles.chatCard} ${isSelected ? styles.selected : ""}`}>
+      <div className={styles.avatarContainer}>
+        <ProfileAvatar url={avatarURL} size="large" />
+      </div>
+      <div className={styles.cardDescription}>
+        <div className={styles.descriptionContact}>
+          <div className={styles.contact}>
+            <span>{userName}</span>
+          </div>
+          <div className={styles.time}>{userChatDate}</div>
+        </div>
+        <div className={styles.lastMessage}>
+          <div className={styles.checkIcon}>
+            <StatusdblCheck />
+          </div>
+          <span>{userLastMessage}</span>
+        </div>
+      </div>
+    </div>
+  );
+}

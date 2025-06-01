@@ -1,5 +1,4 @@
-import { PillButton } from "../../ui/Buttons";
-
+import { PillButton } from "../../../../ui/Buttons";
 import styles from "./FilterChips.module.css";
 
 export default function FilterChips() {

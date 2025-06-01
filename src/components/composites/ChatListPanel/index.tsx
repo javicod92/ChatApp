@@ -2,9 +2,8 @@ import { WhatsAppRefreshed } from "../../ui/Icons";
 import SearchBar from "../../ui/SearchBar";
 import Topbar from "../../ui/Topbar";
 import ChatlistActions from "../../ui/Topbar/components/ChatlistActions";
-import FilterChips from "../FilterChips";
 import styles from "./ChatListPanel.module.css";
-import ChatList from "./components/ChatList";
+import { ChatList, FilterChips } from "./components";
 
 export default function ChatListPanel() {
   return (
