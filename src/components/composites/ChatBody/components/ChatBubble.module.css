@@ -1,0 +1,45 @@
+/* Chat Bubble styles */
+.messageWrapper {
+  margin: 12px 0;
+  padding: 0 63px;
+  display: flex;
+}
+
+@media screen and (min-width: 1301px) {
+  .messageCard {
+    max-width: 65%;
+  }
+}
+
+.sentByMe {
+  justify-content: flex-end;
+}
+
+.messageCard {
+  background-color: var(--chatMSG-bg-color);
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.sentByMe .messageCard {
+  background-color: var(--chatMSG-senntByMe-bg);
+}
+
+.messageContent {
+  position: relative;
+}
+
+.messageDateHidden {
+  margin-left: 8px;
+  visibility: hidden;
+  font-size: 1rem;
+}
+
+.messageDate {
+  position: absolute;
+  font-size: 1rem;
+  right: 0;
+  bottom: -1px;
+}

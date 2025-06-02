@@ -15,3 +15,10 @@ createRoot(document.getElementById("root")!).render(
     </Layout>
   </StrictMode>
 );
+
+window.onload = function () {
+  const container = document.getElementById("messagesContainer");
+  if (container) {
+    container.scrollTop = container.scrollHeight;
+  }
+};

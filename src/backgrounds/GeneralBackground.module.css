@@ -4,9 +4,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(90deg, #aaaaaa, #00a2ff, #ca8300);
+  /* background: linear-gradient(135deg, #3b0a50, #8e0e4f, #c44536, #ff8800); */
+
+  background: linear-gradient(135deg, #e100ff, #2049ff, #0b7dff, #d9ff00);
+
   mask-image: url("/Backgrounds/WhapBg.png");
   mask-size: auto;
-  mask-repeat: repeat;
   opacity: 0.2;
+  z-index: -10;
 }

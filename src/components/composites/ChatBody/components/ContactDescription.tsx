@@ -1,17 +1,20 @@
-import type { WhatsAppChat } from "../../../../data/userData";
 import ProfileAvatar from "../../../ui/ProfileAvatar";
 import styles from "./ContactDescription.module.css";
 
 type DescriptionProps = {
-  chatData: WhatsAppChat;
+  avatarUrl: string;
+  contactName: string;
 };
 
-export default function ContactDescription({ chatData }: DescriptionProps) {
+export default function ContactDescription({
+  avatarUrl,
+  contactName,
+}: DescriptionProps) {
   return (
     <div className={styles.topProfileDescription}>
-      <ProfileAvatar url={chatData.userAvatar} size="medium" />
+      <ProfileAvatar url={avatarUrl} size="medium" />
       <div>
-        <span>{chatData.contactName}</span>
+        <span>{contactName}</span>
       </div>
     </div>
   );

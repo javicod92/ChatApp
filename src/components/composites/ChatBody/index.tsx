@@ -4,18 +4,36 @@ import { whatsappChats } from "../../../data/userData";
 import ContactDescription from "./components/ContactDescription";
 import ContactActions from "./components/ContactActions";
 import GeneralBackground from "../../../backgrounds/GeneralBackground";
+import ChatBubble from "./components/ChatBubble";
 
 export default function ChatBody() {
+  const chatData = whatsappChats[0];
+
   return (
     <main className={styles.chatbodyContainer}>
       <div className={styles.chatbodyWrapper}>
+        <GeneralBackground />
         <Topbar>
-          <ContactDescription chatData={whatsappChats[0]} />
+          <ContactDescription
+            avatarUrl={chatData.userAvatar}
+            contactName={chatData.contactName}
+          />
           <ContactActions />
         </Topbar>
-        <div className={styles.background}>
-          <GeneralBackground />
+
+        {/* IndividualChat Component */}
+        <div className={styles.messagesContainer} id="messagesContainer">
+          {chatData.chatHistory.map((chat) => (
+            <ChatBubble
+              text={chat.text}
+              timestamp={chat.timestamp}
+              sentByMe={chat.sentByMe}
+            />
+          ))}
         </div>
+
+        {/* Footer Component */}
+        <div className={styles.footer}></div>
       </div>
     </main>
   );

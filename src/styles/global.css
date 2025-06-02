@@ -26,6 +26,7 @@
   --black: #000000;
 
   --gray-100: #fafafa;
+  --gray-600: #242626;
   --gray-700: #1d1f1f;
   --gray-800: #161717;
   --gray-900: #0a0a0a;
@@ -43,7 +44,7 @@
   border: none;
   box-sizing: border-box;
   scrollbar-width: thin;
-  scrollbar-color: #0b141a33 transparent;
+  scrollbar-color: rgba(var(--white-rgb), 0.16) transparent;
 }
 
 html[data-color-mode="dark"] {
@@ -84,6 +85,9 @@ html[data-color-mode="dark"] {
   /* Chat Body (main) */
   --chatbody-divider-color: rgba(var(--white-rgb), 0.1);
   --chatbody-bg-color: var(--gray-800);
+
+  --chatMSG-bg-color: var(--gray-600);
+  --chatMSG-senntByMe-bg: var(--green-700);
 }
 
 html[data-color-mode="light"] {
@@ -99,7 +103,7 @@ body,
 #root {
   height: 100%;
   width: 100%;
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 html {
