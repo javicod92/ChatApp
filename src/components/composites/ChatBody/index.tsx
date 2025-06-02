@@ -23,8 +23,9 @@ export default function ChatBody() {
 
         {/* IndividualChat Component */}
         <div className={styles.messagesContainer} id="messagesContainer">
-          {chatData.chatHistory.map((chat) => (
+          {chatData.chatHistory.map((chat, index) => (
             <ChatBubble
+              key={index}
               text={chat.text}
               timestamp={chat.timestamp}
               sentByMe={chat.sentByMe}
