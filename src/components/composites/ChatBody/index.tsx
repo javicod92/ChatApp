@@ -5,6 +5,7 @@ import ContactDescription from "./components/ContactDescription";
 import ContactActions from "./components/ContactActions";
 import GeneralBackground from "../../../backgrounds/GeneralBackground";
 import ChatBubble from "./components/ChatBubble";
+import Footer from "./components/Footer";
 
 export default function ChatBody() {
   const chatData = whatsappChats[0];
@@ -48,7 +49,9 @@ export default function ChatBody() {
         </div>
 
         {/* Footer Component */}
-        <div className={styles.footer}></div>
+        <div className={styles.footer}>
+          <Footer />
+        </div>
       </div>
     </main>
   );

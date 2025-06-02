@@ -139,8 +139,28 @@ export const whatsappChats: WhatsAppChat[] = [
         sentByMe: false,
       },
       {
+        text: "Iagual, creo que es mejor descansar y esperar a que pase todo",
+        timestamp: "8:25 a.m.",
+        sentByMe: false,
+      },
+      {
+        text: "Por las dudas voy a desenchufar mis cosas jajaja",
+        timestamp: "8:25 a.m.",
+        sentByMe: false,
+      },
+      {
         text: "Drama real jaja",
         timestamp: "8:25 a.m.",
+        sentByMe: true,
+      },
+      {
+        text: "Creo que yo debería hacer lo mismo",
+        timestamp: "8:26 a.m.",
+        sentByMe: true,
+      },
+      {
+        text: "🤣🤣🤣🤣🤣",
+        timestamp: "8:26 a.m.",
         sentByMe: true,
       },
       {

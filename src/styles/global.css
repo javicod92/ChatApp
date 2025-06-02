@@ -88,6 +88,11 @@ html[data-color-mode="dark"] {
 
   --chatMSG-bg-color: var(--gray-600);
   --chatMSG-senntByMe-bg: var(--green-700);
+
+  --footer-border-color: transparent;
+  --footer-bg-color: var(--gray-600);
+  --footer-caret-color: var(--green-500);
+  --footer-placeholder-text-color: rgba(var(--white-rgb), 0.6);
 }
 
 html[data-color-mode="light"] {

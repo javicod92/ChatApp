@@ -17,11 +17,11 @@ export default function ChatBubble({
       <div className={styles.messageCard}>
         {hasATail &&
           (!sentByMe ? (
-            <span className={styles.cardTailLeft}>
+            <span className={styles.cardTailLeft} aria-hidden="true">
               <TailIn />
             </span>
           ) : (
-            <span className={styles.cardTailRight}>
+            <span className={styles.cardTailRight} aria-hidden="true">
               <TailOut />
             </span>
           ))}
