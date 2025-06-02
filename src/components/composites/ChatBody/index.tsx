@@ -39,6 +39,7 @@ export default function ChatBody() {
                     text={chat.text}
                     timestamp={chat.timestamp}
                     sentByMe={chat.sentByMe}
+                    hasATail={!isSameReferrer}
                   />
                 </div>
               );

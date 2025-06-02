@@ -19,7 +19,7 @@
 .messagesContainer {
   height: 100%;
   width: 100%;
-  padding: 8px 0;
+  padding-bottom: 8px;
   overflow-y: scroll;
 }
 

@@ -21,3 +21,5 @@ export { default as PlusRounded } from "./PlusRounded";
 export { default as Expressions } from "./Expressions";
 export { default as SendFilled } from "./SendFilled";
 export { default as MicOutlined } from "./MicOutlined";
+export { default as TailIn } from "./Tail-in";
+export { default as TailOut } from "./Tail-out";

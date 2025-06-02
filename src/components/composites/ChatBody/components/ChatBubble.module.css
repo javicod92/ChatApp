@@ -21,6 +21,35 @@
   font-size: 1.5rem;
   font-weight: 400;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.messageCard:has(.cardTailLeft) {
+  border-top-left-radius: 0;
+}
+
+.messageCard:has(.cardTailRight) {
+  border-top-right-radius: 0;
+}
+
+.cardTailLeft {
+  position: absolute;
+  left: -8px;
+  top: 0;
+  color: var(--chatMSG-bg-color);
+  width: 8px;
+  height: 13px;
+  line-height: 0;
+}
+
+.cardTailRight {
+  position: absolute;
+  right: -8px;
+  top: 0;
+  color: var(--chatMSG-senntByMe-bg);
+  width: 8px;
+  height: 13px;
+  line-height: 0;
 }
 
 .sentByMe .messageCard {
