@@ -5,7 +5,7 @@
   display: flex;
 }
 
-@media screen and (min-width: 1301px) {
+@media screen and (min-width: 1300px) {
   .messageCard {
     max-width: 65%;
   }
@@ -21,6 +21,7 @@
   border-radius: 8px;
   font-size: 1.5rem;
   font-weight: 400;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
 }
 
 .sentByMe .messageCard {
