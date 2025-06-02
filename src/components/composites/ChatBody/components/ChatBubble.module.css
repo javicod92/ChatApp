@@ -1,19 +1,12 @@
 /* Chat Bubble styles */
 .messageWrapper {
-  margin: 12px 0;
-  padding: 0 63px;
+  /* margin: 12px 0; */
   display: flex;
 }
 
 @media screen and (min-width: 1300px) {
   .messageCard {
     max-width: 65%;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .messageWrapper {
-    padding: 0 20px;
   }
 }
 

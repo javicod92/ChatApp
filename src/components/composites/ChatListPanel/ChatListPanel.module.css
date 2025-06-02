@@ -7,6 +7,7 @@
   flex-direction: column;
   border-left: 1px solid var(--conversation-header-border);
   flex-wrap: nowrap;
+  flex-shrink: 0;
 }
 
 .logo {

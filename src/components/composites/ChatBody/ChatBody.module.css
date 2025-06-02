@@ -19,8 +19,23 @@
 .messagesContainer {
   height: 100%;
   width: 100%;
-  padding-bottom: 8px;
+  padding: 8px 0;
   overflow-y: scroll;
+}
+
+.messagesContent {
+  width: 100%;
+  height: auto;
+  padding: 0 63px;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* gap: 12px; */
+}
+
+@media screen and (max-width: 1024px) {
+  .messagesContent {
+    padding: 0 20px;
+  }
 }
 
 /* Footer Component */

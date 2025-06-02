@@ -23,14 +23,27 @@ export default function ChatBody() {
 
         {/* IndividualChat Component */}
         <div className={styles.messagesContainer} id="messagesContainer">
-          {chatData.chatHistory.map((chat, index) => (
-            <ChatBubble
-              key={index}
-              text={chat.text}
-              timestamp={chat.timestamp}
-              sentByMe={chat.sentByMe}
-            />
-          ))}
+          <div className={styles.messagesContent}>
+            {chatData.chatHistory.map((chat, index) => {
+              {
+                /* function used for grouping messages from the same referrer */
+              }
+              const previousMSG = chatData.chatHistory[index - 1];
+              const isSameReferrer = previousMSG?.sentByMe === chat.sentByMe;
+              const marginTop = isSameReferrer ? "2px" : "12px";
+
+              return (
+                <div style={{ marginTop }}>
+                  <ChatBubble
+                    key={index}
+                    text={chat.text}
+                    timestamp={chat.timestamp}
+                    sentByMe={chat.sentByMe}
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         {/* Footer Component */}
