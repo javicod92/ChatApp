@@ -7,7 +7,7 @@ import { ChatList, FilterChips } from "./components";
 
 export default function ChatListPanel() {
   return (
-    <div className={styles.sidebar}>
+    <div className={styles.sidebar} id="sidebar">
       {/** WhatsApp logo and action buttons (Header) */}
       <Topbar>
         <div className={styles.logo}>

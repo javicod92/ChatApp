@@ -34,9 +34,8 @@ export default function ChatBody() {
               const marginTop = isSameReferrer ? "2px" : "12px";
 
               return (
-                <div style={{ marginTop }}>
+                <div style={{ marginTop }} key={index}>
                   <ChatBubble
-                    key={index}
                     text={chat.text}
                     timestamp={chat.timestamp}
                     sentByMe={chat.sentByMe}

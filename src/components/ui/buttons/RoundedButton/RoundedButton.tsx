@@ -4,10 +4,11 @@ type RoundedButtonProps = {
   children: React.ReactNode;
   isSelected?: boolean;
   type?: "rounded" | "large";
+  handleClick?: () => void;
 };
 
 export default function RoundedButton(props: RoundedButtonProps) {
-  const { children, isSelected, type = "rounded" } = props;
+  const { children, isSelected, type = "rounded", handleClick } = props;
 
   return (
     <div className={styles[type]}>
@@ -15,6 +16,7 @@ export default function RoundedButton(props: RoundedButtonProps) {
         className={`${styles.roundButton} ${
           isSelected ? styles["roundButton--selected"] : ""
         }`}
+        onClick={handleClick}
       >
         <span className={styles.buttonIcon} aria-hidden="true">
           {children}

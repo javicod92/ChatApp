@@ -4,7 +4,7 @@
   display: flex;
 }
 
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1280px) {
   .messageCard {
     max-width: 65%;
   }

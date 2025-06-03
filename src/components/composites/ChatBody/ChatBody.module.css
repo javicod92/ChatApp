@@ -4,7 +4,7 @@
   flex-grow: 1;
   border-left: 1px solid var(--chatbody-divider-color);
   border-right: 1px solid var(--chatbody-divider-color);
-  min-width: 475px;
+  /* min-width: 475px; */
 }
 
 .chatbodyWrapper {
@@ -26,15 +26,15 @@
 .messagesContent {
   width: 100%;
   height: auto;
-  padding: 0 63px;
+  padding: 0 20px;
   /* display: flex; */
   /* flex-direction: column; */
   /* gap: 12px; */
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1280px) {
   .messagesContent {
-    padding: 0 20px;
+    padding: 0 63px;
   }
 }
 
