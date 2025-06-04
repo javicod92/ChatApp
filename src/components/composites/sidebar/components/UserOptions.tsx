@@ -9,10 +9,11 @@ export default function UserOptions() {
     <div>
       <div className={styles.userOptions}>
         <hr className={styles.divider} />
-        <RoundedButton>
+        <RoundedButton aria-label="Open settings">
           <SettingsRefreshed pointerEvents={"none"} />
         </RoundedButton>
-        <RoundedButton>
+
+        <RoundedButton aria-label="Account options">
           <ProfileAvatar size="small" url="/Avatars/image_0002.png" />
         </RoundedButton>
       </div>

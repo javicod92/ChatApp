@@ -17,17 +17,24 @@ function toggleSidebar() {
 export default function NavButtons() {
   return (
     <nav className={styles.navButtons}>
-      <RoundedButton isSelected={true} handleClick={toggleSidebar}>
-        <ChatFilledRefreshed pointerEvents={"none"} />
+      <RoundedButton
+        isSelected={true}
+        handleClick={toggleSidebar}
+        aria-label="Open chat list"
+      >
+        <ChatFilledRefreshed pointerEvents="none" />
       </RoundedButton>
-      <RoundedButton>
-        <StatusRefreshed pointerEvents={"none"} />
+
+      <RoundedButton aria-label="Open states">
+        <StatusRefreshed pointerEvents="none" />
       </RoundedButton>
-      <RoundedButton>
-        <NewsletterOutline pointerEvents={"none"} />
+
+      <RoundedButton aria-label="Open channels">
+        <NewsletterOutline pointerEvents="none" />
       </RoundedButton>
-      <RoundedButton>
-        <CommunityRefreshed pointerEvents={"none"} />
+
+      <RoundedButton aria-label="Open Community">
+        <CommunityRefreshed pointerEvents="none" />
       </RoundedButton>
     </nav>
   );

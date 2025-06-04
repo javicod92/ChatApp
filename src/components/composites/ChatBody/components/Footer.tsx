@@ -12,12 +12,14 @@ export default function Footer() {
 
   return (
     <div className={styles.footerContainer}>
-      <RoundedButton>
+      <RoundedButton aria-label="Attach files">
         <PlusRounded />
       </RoundedButton>
-      <RoundedButton>
+
+      <RoundedButton aria-label="Add expressions">
         <Expressions />
       </RoundedButton>
+
       <div
         className={styles.textInputContainer}
         aria-label="Escribe un mensaje"
@@ -26,7 +28,8 @@ export default function Footer() {
         aria-placeholder="Escribe un mensaje"
         onInput={handleInput}
       ></div>
-      <RoundedButton>
+
+      <RoundedButton aria-label="Send message">
         <SendFilled />
       </RoundedButton>
     </div>

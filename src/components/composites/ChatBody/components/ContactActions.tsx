@@ -10,16 +10,18 @@ import styles from "./ContactActions.module.css";
 export default function ContactActions() {
   return (
     <div className={styles.topProfileActions}>
-      <RoundedButton type="large">
+      <RoundedButton variant="large" aria-label="Open call application">
         <div className={styles.actionsLargeButton}>
           <VideoCallRefreshed />
           <DownMenu />
         </div>
       </RoundedButton>
-      <RoundedButton>
+
+      <RoundedButton aria-label="Search in messages">
         <SearchRefreshed />
       </RoundedButton>
-      <RoundedButton>
+
+      <RoundedButton aria-label="Messages options">
         <MoreRefreshed />
       </RoundedButton>
     </div>

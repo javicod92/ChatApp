@@ -6,10 +6,11 @@ import styles from "./ChatlistActions.module.css";
 export default function ChatlistActions() {
   return (
     <div className={styles.chatListContainer}>
-      <RoundedButton>
+      <RoundedButton aria-label="Create new message">
         <NewChatOutline />
       </RoundedButton>
-      <RoundedButton>
+
+      <RoundedButton aria-label="Message options">
         <MoreRefreshed />
       </RoundedButton>
     </div>
