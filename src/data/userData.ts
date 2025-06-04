@@ -199,7 +199,7 @@ export const whatsappChats: WhatsAppChat[] = [
         sentByMe: true,
       },
     ],
-    userAvatar: "/Avatars/image_0000.png",
+    userAvatar: "/Avatars/image_0000.webp",
     isSelected: true,
     messageStatus: "read",
   },
@@ -218,7 +218,7 @@ export const whatsappChats: WhatsAppChat[] = [
         sentByMe: true,
       },
     ],
-    userAvatar: "/Avatars/image_0002.png",
+    userAvatar: "/Avatars/image_0002.webp",
     messageStatus: "read",
   },
   {
@@ -232,7 +232,7 @@ export const whatsappChats: WhatsAppChat[] = [
       },
       { text: "Dale, ahí nos vemos.", timestamp: "3:12 p.m.", sentByMe: true },
     ],
-    userAvatar: "/Avatars/image_0003.png",
+    userAvatar: "/Avatars/image_0003.webp",
   },
   {
     id: 4,
@@ -249,7 +249,7 @@ export const whatsappChats: WhatsAppChat[] = [
         sentByMe: true,
       },
     ],
-    userAvatar: "/Avatars/image_0004.png",
+    userAvatar: "/Avatars/image_0004.webp",
   },
   {
     id: 5,
@@ -266,7 +266,7 @@ export const whatsappChats: WhatsAppChat[] = [
         sentByMe: true,
       },
     ],
-    userAvatar: "/Avatars/image_0005.png",
+    userAvatar: "/Avatars/image_0005.webp",
   },
   {
     id: 6,
@@ -279,7 +279,7 @@ export const whatsappChats: WhatsAppChat[] = [
       },
       { text: "Sí, los tengo encima.", timestamp: "5:38 p.m.", sentByMe: true },
     ],
-    userAvatar: "/Avatars/image_0006.png",
+    userAvatar: "/Avatars/image_0006.webp",
     messageStatus: "read",
   },
   {
@@ -289,7 +289,7 @@ export const whatsappChats: WhatsAppChat[] = [
       { text: "Feliz cumple 🎉", timestamp: "7:55 p.m.", sentByMe: false },
       { text: "Gracias genia! 🥳", timestamp: "7:58 p.m.", sentByMe: true },
     ],
-    userAvatar: "/Avatars/image_0007.png",
+    userAvatar: "/Avatars/image_0007.webp",
   },
   {
     id: 8,
@@ -306,7 +306,7 @@ export const whatsappChats: WhatsAppChat[] = [
         sentByMe: true,
       },
     ],
-    userAvatar: "/Avatars/image_0008.png",
+    userAvatar: "/Avatars/image_0008.webp",
     messageStatus: "read",
   },
   {
@@ -324,7 +324,7 @@ export const whatsappChats: WhatsAppChat[] = [
         sentByMe: true,
       },
     ],
-    userAvatar: "/Avatars/image_0009.png",
+    userAvatar: "/Avatars/image_0009.webp",
   },
   {
     id: 10,
@@ -341,7 +341,7 @@ export const whatsappChats: WhatsAppChat[] = [
         sentByMe: true,
       },
     ],
-    userAvatar: "/Avatars/image_0010.png",
+    userAvatar: "/Avatars/image_0010.webp",
     messageStatus: "read",
   },
   {
@@ -359,7 +359,7 @@ export const whatsappChats: WhatsAppChat[] = [
         sentByMe: true,
       },
     ],
-    userAvatar: "/Avatars/image_0011.png",
+    userAvatar: "/Avatars/image_0011.webp",
   },
   {
     id: 12,
@@ -376,7 +376,7 @@ export const whatsappChats: WhatsAppChat[] = [
         sentByMe: true,
       },
     ],
-    userAvatar: "/Avatars/image_0012.png",
+    userAvatar: "/Avatars/image_0012.webp",
   },
   {
     id: 13,
@@ -393,7 +393,7 @@ export const whatsappChats: WhatsAppChat[] = [
         sentByMe: true,
       },
     ],
-    userAvatar: "/Avatars/image_0013.png",
+    userAvatar: "/Avatars/image_0013.webp",
   },
   {
     id: 14,
@@ -406,7 +406,7 @@ export const whatsappChats: WhatsAppChat[] = [
         sentByMe: true,
       },
     ],
-    userAvatar: "/Avatars/image_0014.png",
+    userAvatar: "/Avatars/image_0014.webp",
   },
   {
     id: 15,
@@ -423,6 +423,6 @@ export const whatsappChats: WhatsAppChat[] = [
         sentByMe: true,
       },
     ],
-    userAvatar: "/Avatars/image_0015.png",
+    userAvatar: "/Avatars/image_0015.webp",
   },
 ];

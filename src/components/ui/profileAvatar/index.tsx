@@ -8,7 +8,7 @@ type ProfileProps = {
 export default function ProfileAvatar({ size = "small", url }: ProfileProps) {
   return (
     <div className={styles[size]}>
-      <img src={url} alt="Profile Image" />
+      <img src={url} alt="Profile Image" loading="lazy" />
     </div>
   );
 }

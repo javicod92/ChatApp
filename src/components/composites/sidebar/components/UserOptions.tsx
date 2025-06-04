@@ -14,7 +14,7 @@ export default function UserOptions() {
         </RoundedButton>
 
         <RoundedButton aria-label="Account options">
-          <ProfileAvatar size="small" url="/Avatars/image_0002.png" />
+          <ProfileAvatar size="small" url="/Avatars/image_0002.webp" />
         </RoundedButton>
       </div>
     </div>
