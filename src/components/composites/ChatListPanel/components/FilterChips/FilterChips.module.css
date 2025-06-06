@@ -1,0 +1,6 @@
+.filterContainer {
+  padding: 5px 20px 7px;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 8px;
+}

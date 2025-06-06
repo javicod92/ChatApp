@@ -1,0 +1,76 @@
+/* Chat Bubble styles */
+.messageWrapper {
+  /* margin: 12px 0; */
+  display: flex;
+}
+
+@media screen and (min-width: 1280px) {
+  .messageCard {
+    max-width: 65%;
+  }
+}
+
+.sentByMe {
+  justify-content: flex-end;
+}
+
+.messageCard {
+  background-color: var(--chatMSG-bg-color);
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.messageCard:has(.cardTailLeft) {
+  border-top-left-radius: 0;
+}
+
+.messageCard:has(.cardTailRight) {
+  border-top-right-radius: 0;
+}
+
+.cardTailLeft {
+  position: absolute;
+  left: -8px;
+  top: 0;
+  color: var(--chatMSG-bg-color);
+  width: 8px;
+  height: 13px;
+  line-height: 0;
+  display: block;
+}
+
+.cardTailRight {
+  position: absolute;
+  right: -8px;
+  top: 0;
+  color: var(--chatMSG-senntByMe-bg);
+  width: 8px;
+  height: 13px;
+  line-height: 0;
+  display: block;
+}
+
+.sentByMe .messageCard {
+  background-color: var(--chatMSG-senntByMe-bg);
+}
+
+.messageContent {
+  position: relative;
+}
+
+.messageDateHidden {
+  margin-left: 8px;
+  visibility: hidden;
+  font-size: 1rem;
+}
+
+.messageDate {
+  position: absolute;
+  font-size: 1rem;
+  right: 0;
+  bottom: -1px;
+}

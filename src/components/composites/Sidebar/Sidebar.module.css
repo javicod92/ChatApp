@@ -1,0 +1,33 @@
+.sidebar {
+  width: 64px;
+  max-width: 64px;
+  background: var(--sidebar-background);
+  padding: 10px 12px;
+  position: relative;
+  z-index: 200;
+}
+
+.sidebarContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.sidebarWrapper {
+  width: 100%;
+  flex-grow: 1;
+}
+
+/* .sidebarNav > * {
+  margin: 2px 0;
+} */
+
+.userSection {
+  flex-grow: 0;
+  width: 100%;
+  height: auto;
+  flex-shrink: 1;
+}

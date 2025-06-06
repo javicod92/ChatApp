@@ -1,0 +1,9 @@
+.topProfileDescription {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  gap: 15px;
+  font-weight: 600;
+  flex-shrink: 0;
+  cursor: pointer;
+}
