@@ -24,6 +24,7 @@
   --white: #ffffff;
   --white-rgb: 255, 255, 255;
   --black: #000000;
+  --black-rgb: 0, 0, 0;
 
   --gray-100: #fafafa;
   --gray-600: #242626;
@@ -31,6 +32,7 @@
   --gray-800: #161717;
   --gray-900: #0a0a0a;
 
+  --green-200: #d9fdd3;
   --green-500: #21c063;
   --green-700: #144d37;
   --green-800: #103529;
@@ -59,8 +61,8 @@ html[data-color-mode="dark"] {
   /* SideBar */
   --sidebar-background: var(--gray-700);
   --nav-buttons-text-color: var(--white-rgb);
-  --nav-buttons-hover-color: var(--white-rgb);
-  --nav-divider-icon-color: var(--white-rgb);
+  --nav-buttons-hover-color: rgba(var(--white-rgb), 0.16);
+  --nav-divider-icon-color: rgba(var(--white-rgb), 0.1);
   --navbar-width: 64px;
 
   /* Vetical Divider */
@@ -101,6 +103,44 @@ html[data-color-mode="light"] {
   /* Page */
   --bg-page: var(--gray-100);
   --text-primary: var(--gray-800);
+
+  /* SideBar */
+  --sidebar-background: var(--gray-100);
+  --nav-buttons-text-color: var(--gray-800);
+  --nav-buttons-hover-color: rgba(var(--black-rgb), 0.16);
+  --nav-divider-icon-color: rgba(var(--black-rgb), 0.15);
+  --navbar-width: 64px;
+
+  /* Vetical Divider */
+  --conversation-header-border: rgba(var(--black-rgb), 0.15);
+
+  /* Chat List Pannel */
+  --bg-topbar-color: var(--gray-100);
+
+  --bg-search-bar-color: rgba(var(--black-rgb), 0.1);
+  --searchbar-text-color: rgba(var(--black-rgb), 0.6);
+  --searchbar-inset-borderColor: var(--green-500);
+
+  --chat-list-bg: var(--gray-100);
+  --pill-buttons-border-color: rgba(var(--black-rgb), 0.2);
+  --pill-buttontext-color: rgba(var(--black-rgb), 0.6);
+  --pill-selected-bg: var(--green-200);
+  --pill-hover-bg: rgba(var(--black-rgb), 0.2);
+
+  --chatCard-bg: rgba(var(--black-rgb), 0.15);
+  --cgatCard-read-color: var(--message-status-read);
+
+  /* Chat Body (main) */
+  --chatbody-divider-color: rgba(var(--black-rgb), 0.1);
+  --chatbody-bg-color: var(--gray-100);
+
+  --chatMSG-bg-color: var(--gray-100);
+  --chatMSG-senntByMe-bg: var(--green-200);
+
+  --footer-border-color: transparent;
+  --footer-bg-color: var(--gray-100);
+  --footer-caret-color: var(--green-500);
+  --footer-placeholder-text-color: rgba(var(--black-rgb), 0.6);
 }
 
 html,

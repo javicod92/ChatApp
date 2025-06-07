@@ -32,7 +32,7 @@
 
 .roundButton:hover,
 .roundButton--selected {
-  background-color: rgba(var(--nav-buttons-hover-color), 0.05);
+  background-color: var(--nav-buttons-hover-color);
 }
 
 .roundButton--selected {
