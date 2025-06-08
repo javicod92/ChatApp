@@ -46,7 +46,23 @@
   border: none;
   box-sizing: border-box;
   scrollbar-width: thin;
-  scrollbar-color: rgba(var(--white-rgb), 0.16) transparent;
+  scrollbar-color: rgba(var(--black-rgb), 0.2) transparent;
+}
+
+html[data-color-mode="dark"] * {
+  scrollbar-color: rgba(var(--white-rgb), 0.2) transparent;
+}
+
+html[data-color-mode="light"] * {
+  scrollbar-color: rgba(var(--black-rgb), 0.2) transparent;
+}
+
+html[data-color-mode="dark"] *::-webkit-scrollbar-thumb {
+  background: rgba(var(--white-rgb), 0.2);
+}
+
+html[data-color-mode="light"] *::-webkit-scrollbar-thumb {
+  background: rgba(var(--black-rgb), 0.2);
 }
 
 html[data-color-mode="dark"] {
