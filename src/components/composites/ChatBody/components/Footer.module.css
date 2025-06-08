@@ -1,0 +1,34 @@
+.footerContainer {
+  background-color: var(--footer-bg-color);
+  margin: 0 12px 12px;
+  padding: 5px;
+  height: auto;
+  border: 1px solid var(--footer-border-color);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+}
+
+.textInputContainer {
+  flex-grow: 1;
+  max-height: 11.76em;
+  min-height: 1.47em;
+  user-select: text;
+  white-space: pre-wrap;
+  word-break: break-word;
+  caret-color: var(--footer-caret-color);
+  margin-left: 8px;
+  cursor: text;
+  font-weight: 300;
+}
+
+.textInputContainer:empty::before {
+  color: var(--footer-placeholder-text-color);
+  content: attr(aria-placeholder);
+  font-weight: 300;
+}
+
+.textInputContainer:active,
+.textInputContainer:focus {
+  outline: none;
+}

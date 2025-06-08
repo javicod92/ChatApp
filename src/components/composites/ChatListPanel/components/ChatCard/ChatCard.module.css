@@ -1,0 +1,95 @@
+.chatCard {
+  margin: 0 10px;
+  height: 72px;
+  border-radius: 10px;
+  /* background-color: blueviolet; */
+  display: flex;
+  cursor: pointer;
+}
+
+.selected,
+.chatCard:hover {
+  background-color: var(--chatCard-bg);
+}
+
+.avatarContainer {
+  padding: 0 13px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.cardDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 20px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.lastMessage {
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+.descriptionContact {
+  display: flex;
+  align-items: center;
+  line-height: normal;
+  text-align: left;
+  flex-wrap: nowrap;
+}
+
+.contact {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+  font-size: 17px;
+  font-weight: 400;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.contact span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.time {
+  margin-top: 3px;
+  margin-left: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 400;
+  white-space: nowrap;
+  max-width: 100%;
+  font-size: 12px;
+}
+
+.lastMessage {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.checkIcon {
+  display: flex;
+  align-items: center;
+}
+
+.lastMessage span {
+  margin-left: 2px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.messageRead {
+  color: var(--cgatCard-read-color);
+}

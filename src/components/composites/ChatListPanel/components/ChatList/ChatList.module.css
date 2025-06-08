@@ -1,0 +1,15 @@
+.listContainer {
+  padding-top: 4px;
+  scrollbar-color: rgba(var(--white-rgb), 0.1) transparent;
+  overflow-y: auto;
+  background-color: var(--chat-list-bg);
+  width: 100%;
+}
+
+.list {
+  width: 100%;
+  /* height: 7904px; */
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}

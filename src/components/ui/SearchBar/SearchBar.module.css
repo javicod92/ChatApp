@@ -1,0 +1,42 @@
+.SearchContainer {
+  width: 100%;
+  padding: 0 20px;
+  margin-bottom: 5px;
+}
+
+.searchWrapper {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-search-bar-color);
+  border-radius: 9999px;
+  position: relative;
+  overflow: hidden;
+  transition: border 0.2s;
+}
+
+.searchWrapper:focus-within {
+  box-shadow: 0 0 0 2px var(--searchbar-inset-borderColor) inset;
+}
+
+.searchButton {
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  color: var(--searchbar-text-color);
+  cursor: default;
+}
+
+.SearchInput {
+  width: 100%;
+  height: 40px;
+  padding-left: 46px;
+}
+
+.InputField {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  outline: none;
+  font-size: 0.9em;
+  font-weight: 100;
+}

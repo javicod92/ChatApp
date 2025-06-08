@@ -1,0 +1,48 @@
+.rounded {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.large {
+  width: auto;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.roundButton {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: inherit;
+}
+
+.roundButton:hover,
+.roundButton--selected {
+  background-color: var(--nav-buttons-hover-color);
+}
+
+.roundButton--selected {
+  color: rgba(var(--nav-buttons-text-color));
+}
+
+.buttonIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,18 @@
+.userOptions {
+  margin: 2px 0;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 4px;
+  color: rgba(var(--nav-buttons-text-color), 0.6);
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  border: none;
+  border-top: solid 1px var(--nav-divider-icon-color);
+  margin: 8px 0;
+}

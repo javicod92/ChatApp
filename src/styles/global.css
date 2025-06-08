@@ -1,0 +1,167 @@
+@font-face {
+  font-family: "Inter";
+  src: url("/Fonts/Inter.ttf");
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: "Inter-italic";
+  src: url("/Fonts/InterItalic.ttf");
+  font-weight: 100 900;
+}
+
+:root {
+  font-family: "Inter", "Segoe UI", Roboto;
+  line-height: 1.5;
+  font-weight: 100;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* ========== Colors Pallette ==========*/
+  --white: #ffffff;
+  --white-rgb: 255, 255, 255;
+  --black: #000000;
+  --black-rgb: 0, 0, 0;
+
+  --gray-100: #fafafa;
+  --gray-600: #242626;
+  --gray-700: #1d1f1f;
+  --gray-800: #161717;
+  --gray-900: #0a0a0a;
+
+  --green-200: #d9fdd3;
+  --green-500: #21c063;
+  --green-700: #144d37;
+  --green-800: #103529;
+
+  --message-status-read: #53bdeb;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(var(--white-rgb), 0.16) transparent;
+}
+
+html[data-color-mode="dark"] {
+  color-scheme: dark;
+
+  /* Page */
+  --bg-page: var(--gray-800);
+  --text-primary: var(--gray-100);
+
+  /* Buttons */
+
+  /* SideBar */
+  --sidebar-background: var(--gray-700);
+  --nav-buttons-text-color: var(--white-rgb);
+  --nav-buttons-hover-color: rgba(var(--white-rgb), 0.16);
+  --nav-divider-icon-color: rgba(var(--white-rgb), 0.1);
+  --navbar-width: 64px;
+
+  /* Vetical Divider */
+  --conversation-header-border: rgba(var(--white-rgb), 0.15);
+
+  /* Chat List Pannel */
+  --bg-topbar-color: var(--gray-800);
+
+  --bg-search-bar-color: rgba(var(--white-rgb), 0.1);
+  --searchbar-text-color: rgba(var(--white-rgb), 0.6);
+  --searchbar-inset-borderColor: var(--green-500);
+
+  --chat-list-bg: var(--gray-800);
+  --pill-buttons-border-color: rgba(var(--white-rgb), 0.1);
+  --pill-buttontext-color: rgba(var(--white-rgb), 0.6);
+  --pill-selected-bg: var(--green-800);
+  --pill-hover-bg: rgba(var(--white-rgb), 0.1);
+
+  --chatCard-bg: rgba(var(--white-rgb), 0.1);
+  --cgatCard-read-color: var(--message-status-read);
+
+  /* Chat Body (main) */
+  --chatbody-divider-color: rgba(var(--white-rgb), 0.1);
+  --chatbody-bg-color: var(--gray-800);
+
+  --chatMSG-bg-color: var(--gray-600);
+  --chatMSG-senntByMe-bg: var(--green-700);
+
+  --footer-border-color: transparent;
+  --footer-bg-color: var(--gray-600);
+  --footer-caret-color: var(--green-500);
+  --footer-placeholder-text-color: rgba(var(--white-rgb), 0.6);
+}
+
+html[data-color-mode="light"] {
+  color-scheme: light;
+
+  /* Page */
+  --bg-page: var(--gray-100);
+  --text-primary: var(--gray-800);
+
+  /* SideBar */
+  --sidebar-background: var(--gray-100);
+  --nav-buttons-text-color: var(--gray-800);
+  --nav-buttons-hover-color: rgba(var(--black-rgb), 0.16);
+  --nav-divider-icon-color: rgba(var(--black-rgb), 0.15);
+  --navbar-width: 64px;
+
+  /* Vetical Divider */
+  --conversation-header-border: rgba(var(--black-rgb), 0.15);
+
+  /* Chat List Pannel */
+  --bg-topbar-color: var(--gray-100);
+
+  --bg-search-bar-color: rgba(var(--black-rgb), 0.1);
+  --searchbar-text-color: rgba(var(--black-rgb), 0.6);
+  --searchbar-inset-borderColor: var(--green-500);
+
+  --chat-list-bg: var(--gray-100);
+  --pill-buttons-border-color: rgba(var(--black-rgb), 0.2);
+  --pill-buttontext-color: rgba(var(--black-rgb), 0.6);
+  --pill-selected-bg: var(--green-200);
+  --pill-hover-bg: rgba(var(--black-rgb), 0.2);
+
+  --chatCard-bg: rgba(var(--black-rgb), 0.15);
+  --cgatCard-read-color: var(--message-status-read);
+
+  /* Chat Body (main) */
+  --chatbody-divider-color: rgba(var(--black-rgb), 0.1);
+  --chatbody-bg-color: var(--gray-100);
+
+  --chatMSG-bg-color: var(--gray-100);
+  --chatMSG-senntByMe-bg: var(--green-200);
+
+  --footer-border-color: transparent;
+  --footer-bg-color: var(--gray-100);
+  --footer-caret-color: var(--green-500);
+  --footer-placeholder-text-color: rgba(var(--black-rgb), 0.6);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  overflow-y: hidden;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6em;
+  background: var(--bg-page);
+  color: var(--text-primary);
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+}
