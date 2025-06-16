@@ -77,7 +77,8 @@ html[data-color-mode="dark"] {
   /* SideBar */
   --sidebar-background: var(--gray-700);
   --nav-buttons-text-color: var(--white-rgb);
-  --nav-buttons-hover-color: rgba(var(--white-rgb), 0.16);
+  --nav-buttons-hover-color: rgba(var(--white-rgb), 0.05);
+  --nav-buttons-insetColor: var(--green-500);
   --nav-divider-icon-color: rgba(var(--white-rgb), 0.1);
   --navbar-width: 64px;
 
@@ -123,8 +124,9 @@ html[data-color-mode="light"] {
   /* SideBar */
   --sidebar-background: var(--gray-100);
   --nav-buttons-text-color: var(--gray-800);
-  --nav-buttons-hover-color: rgba(var(--black-rgb), 0.16);
+  --nav-buttons-hover-color: rgba(var(--black-rgb), 0.1);
   --nav-divider-icon-color: rgba(var(--black-rgb), 0.15);
+  --nav-buttons-insetColor: var(--green-500);
   --navbar-width: 64px;
 
   /* Vetical Divider */

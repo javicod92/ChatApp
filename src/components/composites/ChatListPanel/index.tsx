@@ -5,10 +5,17 @@ import ChatlistActions from "../../ui/Topbar/components/ChatlistActions";
 import styles from "./ChatListPanel.module.css";
 import { ChatList, FilterChips } from "./components";
 
-export default function ChatListPanel() {
+interface ChatListPanelProps {
+  isSidebarOpen: boolean;
+}
+
+export default function ChatListPanel({ isSidebarOpen }: ChatListPanelProps) {
   return (
-    <div className={styles.sidebar} id="sidebar">
-      {/** WhatsApp logo and action buttons (Header) */}
+    <div
+      className={`${styles.sidebar} ${isSidebarOpen ? styles.sidebarOpen : ""}`}
+      id="sidebar"
+    >
+      {/* WhatsApp logo and action buttons (Header) */}
       <Topbar>
         <div className={styles.logo}>
           <WhatsAppRefreshed />

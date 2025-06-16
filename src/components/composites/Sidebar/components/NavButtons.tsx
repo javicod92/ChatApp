@@ -5,21 +5,18 @@ import {
   NewsletterOutline,
   CommunityRefreshed,
 } from "../../../ui/Icons";
-
 import styles from "./NavButtons.module.css";
 
-function toggleSidebar() {
-  const sidebar = document.getElementById("sidebar");
-  if (!sidebar) return;
-  sidebar.style.left = sidebar.style.left === "64px" ? "-100%" : "64px";
+interface NavButtonsProps {
+  handleClick: () => void;
 }
 
-export default function NavButtons() {
+export default function NavButtons({ handleClick }: NavButtonsProps) {
   return (
     <nav className={styles.navButtons}>
       <RoundedButton
         isSelected={true}
-        handleClick={toggleSidebar}
+        handleClick={handleClick}
         aria-label="Open chat list"
       >
         <ChatFilledRefreshed pointerEvents="none" />
