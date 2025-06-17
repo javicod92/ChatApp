@@ -13,11 +13,14 @@ export default function Footer() {
     }
   };
 
+  /* I use a single useRef because the text entered in the input element 
+  does not need to be processed. This avoids unnecessary Re-renders */
   const handleSend = () => {
     const message = inputRef.current?.innerText.trim();
     if (message) {
       alert(message);
       inputRef.current!.innerText = "";
+      inputRef.current?.focus();
     }
   };
 
@@ -39,6 +42,7 @@ export default function Footer() {
         aria-placeholder="Escribe un mensaje"
         onInput={handleInput}
         ref={inputRef}
+        tabIndex={0}
       ></div>
 
       <RoundedButton aria-label="Send message" handleClick={handleSend}>
