@@ -6,6 +6,7 @@
   align-items: center;
   border-radius: 9999px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .large {
@@ -16,6 +17,7 @@
   align-items: center;
   border-radius: 9999px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .roundButton {
