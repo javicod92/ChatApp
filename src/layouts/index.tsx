@@ -5,9 +5,15 @@ import styles from "./Layout.module.css";
 
 type LayoutProps = {
   children: React.ReactNode;
+  selectedChatId: number;
+  handleSelectedChat: (id: number) => void;
 };
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({
+  children,
+  selectedChatId,
+  handleSelectedChat,
+}: LayoutProps) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const prevWidth = useRef(window.innerWidth);
 
@@ -32,7 +38,11 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className={styles.container}>
       <Sidebar handleClick={handleToggleSidebar} />
-      <ChatListPanel isSidebarOpen={isSidebarOpen} />
+      <ChatListPanel
+        isSidebarOpen={isSidebarOpen}
+        selectedChatId={selectedChatId}
+        handleSelectedChat={handleSelectedChat}
+      />
       {children}
     </div>
   );

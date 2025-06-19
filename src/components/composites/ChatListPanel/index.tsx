@@ -7,9 +7,15 @@ import { ChatList, FilterChips } from "./components";
 
 interface ChatListPanelProps {
   isSidebarOpen: boolean;
+  selectedChatId: number;
+  handleSelectedChat: (id: number) => void;
 }
 
-export default function ChatListPanel({ isSidebarOpen }: ChatListPanelProps) {
+export default function ChatListPanel({
+  isSidebarOpen,
+  handleSelectedChat,
+  selectedChatId,
+}: ChatListPanelProps) {
   return (
     <div
       className={`${styles.sidebar} ${isSidebarOpen ? styles.sidebarOpen : ""}`}
@@ -27,7 +33,10 @@ export default function ChatListPanel({ isSidebarOpen }: ChatListPanelProps) {
       <div className={styles.content}>
         <SearchBar />
         <FilterChips />
-        <ChatList />
+        <ChatList
+          selectedChatId={selectedChatId}
+          handleSelectedChat={handleSelectedChat}
+        />
       </div>
     </div>
   );

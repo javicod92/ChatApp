@@ -7,8 +7,14 @@ import GeneralBackground from "../../../backgrounds/GeneralBackground";
 import ChatBubble from "./components/ChatBubble";
 import Footer from "./components/Footer";
 
-export default function ChatBody() {
-  const chatData = whatsappChats[0];
+type ChatBodyProps = {
+  selectedChatId: number;
+};
+
+export default function ChatBody({ selectedChatId }: ChatBodyProps) {
+  const chatData = whatsappChats.find((chat) => chat.id === selectedChatId);
+
+  if (!chatData) return;
 
   return (
     <main className={styles.chatbodyContainer}>
