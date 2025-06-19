@@ -344,7 +344,7 @@ export const whatsappChats: WhatsAppChat[] = [
         sentByMe: true,
       },
       {
-        text: "Mientras tanto voy preparando el juego de cartas, está buenísimo, tenes que formar dos grupos y vos tenés que tratar de hacer que tu equipo adivine la mayor cantidad de cartas en el menor tiempo posible. En la carta, abajo aparecen palabras que no podes decir, pero por ejemplo si te sale: Mate, podes decir: es una bebida caliente que tomamos los Argentinos y cosas así jajaja pero no podes decir las palabras que están debajo. Está muy bueno!!",
+        text: "Mientras tanto voy preparando el juego de cartas, está buenísimo, tenes que formar dos grupos y vos tenés que tratar de hacer que tu equipo adivine la mayor cantidad de cartas en el menor tiempo posible. En la carta, abajo aparecen palabras que no podes decir. Está muy bueno!!",
         timestamp: "10:18 a.m.",
         sentByMe: true,
       },
