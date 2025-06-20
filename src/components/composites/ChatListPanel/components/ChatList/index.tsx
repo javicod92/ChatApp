@@ -5,16 +5,22 @@ import styles from "./ChatList.module.css";
 type ChatListProps = {
   selectedChatId: number;
   handleSelectedChat: (id: number) => void;
+  searchTerm: string;
 };
 
 export default function ChatList({
   selectedChatId,
   handleSelectedChat,
+  searchTerm,
 }: ChatListProps) {
+  const filteredChats = whatsappChats.filter((chat) =>
+    chat.contactName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className={styles.listContainer}>
       <div className={styles.list}>
-        {whatsappChats.map((chat) => (
+        {filteredChats.map((chat) => (
           <ChatCard
             key={chat.id}
             handleClick={() => handleSelectedChat(chat.id)}

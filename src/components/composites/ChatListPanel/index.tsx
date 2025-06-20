@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { WhatsAppRefreshed } from "../../ui/Icons";
 import SearchBar from "../../ui/SearchBar";
 import Topbar from "../../ui/Topbar";
@@ -16,6 +17,8 @@ export default function ChatListPanel({
   handleSelectedChat,
   selectedChatId,
 }: ChatListPanelProps) {
+  const [searchTerm, setSearchTerm] = useState("");
+
   return (
     <div
       className={`${styles.sidebar} ${isSidebarOpen ? styles.sidebarOpen : ""}`}
@@ -31,11 +34,12 @@ export default function ChatListPanel({
 
       {/* Chat lists */}
       <div className={styles.content}>
-        <SearchBar />
+        <SearchBar value={searchTerm} onChange={setSearchTerm} />
         <FilterChips />
         <ChatList
           selectedChatId={selectedChatId}
           handleSelectedChat={handleSelectedChat}
+          searchTerm={searchTerm}
         />
       </div>
     </div>

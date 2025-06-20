@@ -632,10 +632,10 @@ export const whatsappChats: WhatsAppChat[] = [
   },
   {
     id: 6,
-    contactName: "Lucía Benítez",
+    contactName: "Jorge Martínez",
     chatHistory: [
       {
-        text: "Lu, ¿me pasás el apunte de historia?",
+        text: "Hola Jorge, me pasás el apunte de historia?",
         timestamp: "8:30 a.m.",
         sentByMe: true,
       },
@@ -655,7 +655,7 @@ export const whatsappChats: WhatsAppChat[] = [
         sentByMe: false,
       },
       {
-        text: "¿Te lo mando por mail o por acá?",
+        text: "Te lo mando por mail o por acá?",
         timestamp: "8:34 a.m.",
         sentByMe: false,
       },
@@ -674,7 +674,7 @@ export const whatsappChats: WhatsAppChat[] = [
         timestamp: "8:37 a.m.",
         sentByMe: true,
       },
-      { text: "¿Ya estudiaste algo?", timestamp: "8:38 a.m.", sentByMe: false },
+      { text: "Ya estudiaste algo?", timestamp: "8:38 a.m.", sentByMe: false },
       {
         text: "Un poco, pero me falta banda todavía.",
         timestamp: "8:39 a.m.",
@@ -686,12 +686,12 @@ export const whatsappChats: WhatsAppChat[] = [
         sentByMe: false,
       },
       {
-        text: "¿Querés que repasemos juntos después?",
+        text: "Querés que repasemos juntos después?",
         timestamp: "8:41 a.m.",
         sentByMe: false,
       },
       {
-        text: "Sí, de una. ¿Hoy a la tarde podés?",
+        text: "Sí, de una. Hoy a la tarde podés?",
         timestamp: "8:42 a.m.",
         sentByMe: true,
       },
