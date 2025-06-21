@@ -16,7 +16,21 @@ export default function ChatList({
   const filteredChats = whatsappChats.filter((chat) =>
     chat.contactName.toLowerCase().includes(searchTerm.toLowerCase())
   );
-  console.log(filteredChats);
+
+  // Function used to highlight text
+  function highlightText(text: string, search: string) {
+    if (!search.trim()) return text;
+    const regex = new RegExp(`(${search})`, "gi");
+    return text.split(regex).map((part, i) =>
+      regex.test(part) ? (
+        <span key={i} className={styles.highlight}>
+          {part}
+        </span>
+      ) : (
+        part
+      )
+    );
+  }
 
   return (
     <div className={styles.listContainer}>
@@ -31,7 +45,7 @@ export default function ChatList({
               key={chat.id}
               handleClick={() => handleSelectedChat(chat.id)}
               avatarURL={chat.userAvatar}
-              userName={chat.contactName}
+              userName={highlightText(chat.contactName, searchTerm)}
               userChatDate={
                 chat.chatHistory[chat.chatHistory.length - 1].timestamp
               }

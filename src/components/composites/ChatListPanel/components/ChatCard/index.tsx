@@ -4,7 +4,7 @@ import styles from "./ChatCard.module.css";
 
 type ChatcardProps = {
   avatarURL: string;
-  userName: string;
+  userName: React.ReactNode;
   userChatDate: string;
   userLastMessage: string;
   isSelected?: boolean;

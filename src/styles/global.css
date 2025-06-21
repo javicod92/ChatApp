@@ -38,6 +38,7 @@
   --green-800: #103529;
 
   --message-status-read: #53bdeb;
+  --highlightedText: #ffd900;
 }
 
 * {
@@ -100,6 +101,8 @@ html[data-color-mode="dark"] {
 
   --chatCard-bg: rgba(var(--white-rgb), 0.1);
   --cgatCard-read-color: var(--message-status-read);
+  --chatCardNameSearched: var(--highlightedText);
+  --chatCardNameSearchedText: var(--gray-900);
 
   /* Chat Body (main) */
   --chatbody-divider-color: rgba(var(--white-rgb), 0.1);
@@ -148,6 +151,8 @@ html[data-color-mode="light"] {
 
   --chatCard-bg: rgba(var(--black-rgb), 0.15);
   --cgatCard-read-color: var(--message-status-read);
+  --chatCardNameSearched: var(--highlightedText);
+  --chatCardNameSearchedText: var(--gray-900);
 
   /* Chat Body (main) */
   --chatbody-divider-color: rgba(var(--black-rgb), 0.1);
