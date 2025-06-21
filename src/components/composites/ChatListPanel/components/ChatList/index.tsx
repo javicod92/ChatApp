@@ -16,24 +16,33 @@ export default function ChatList({
   const filteredChats = whatsappChats.filter((chat) =>
     chat.contactName.toLowerCase().includes(searchTerm.toLowerCase())
   );
+  console.log(filteredChats);
 
   return (
     <div className={styles.listContainer}>
       <div className={styles.list}>
-        {filteredChats.map((chat) => (
-          <ChatCard
-            key={chat.id}
-            handleClick={() => handleSelectedChat(chat.id)}
-            avatarURL={chat.userAvatar}
-            userName={chat.contactName}
-            userChatDate={
-              chat.chatHistory[chat.chatHistory.length - 1].timestamp
-            }
-            userLastMessage={chat.chatHistory[chat.chatHistory.length - 1].text}
-            isSelected={selectedChatId === chat.id}
-            messageStatus={chat.messageStatus}
-          />
-        ))}
+        {!filteredChats.length ? (
+          <div className={styles.warningContainer}>
+            <span>{`No hay coincidencias con: "${searchTerm.trim()}"`}</span>
+          </div>
+        ) : (
+          filteredChats.map((chat) => (
+            <ChatCard
+              key={chat.id}
+              handleClick={() => handleSelectedChat(chat.id)}
+              avatarURL={chat.userAvatar}
+              userName={chat.contactName}
+              userChatDate={
+                chat.chatHistory[chat.chatHistory.length - 1].timestamp
+              }
+              userLastMessage={
+                chat.chatHistory[chat.chatHistory.length - 1].text
+              }
+              isSelected={selectedChatId === chat.id}
+              messageStatus={chat.messageStatus}
+            />
+          ))
+        )}
       </div>
     </div>
   );

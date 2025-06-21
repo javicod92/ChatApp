@@ -13,3 +13,16 @@
   flex-direction: column;
   gap: 4px;
 }
+
+.warningContainer {
+  padding: 72px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.warningContainer > span {
+  font-size: 14px;
+  font-weight: 200;
+  word-break: break-all;
+}
