@@ -4,14 +4,14 @@
   padding: 5px;
   height: auto;
   border: 1px solid var(--footer-border-color);
-  border-radius: 9999px;
+  border-radius: 25px;
   display: flex;
   align-items: center;
 }
 
 .textInputContainer {
   flex-grow: 1;
-  max-height: 11.76em;
+  max-height: 10em;
   min-height: 1.47em;
   user-select: text;
   white-space: pre-wrap;
@@ -20,6 +20,7 @@
   margin-left: 8px;
   cursor: text;
   font-weight: 300;
+  overflow-y: auto;
 }
 
 .textInputContainer:empty::before {
@@ -31,4 +32,5 @@
 .textInputContainer:active,
 .textInputContainer:focus {
   outline: none;
+  border-bottom: 1px solid var(--footer-focused-color);
 }
