@@ -23,3 +23,5 @@ export { default as SendFilled } from "./SendFilled";
 export { default as MicOutlined } from "./MicOutlined";
 export { default as TailIn } from "./Tail-in";
 export { default as TailOut } from "./Tail-out";
+export { default as SunIcon } from "./SunIcon";
+export { default as MoonIcon } from "./MoonIcon";
