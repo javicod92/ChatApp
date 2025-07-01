@@ -6,9 +6,23 @@ import ContactActions from "./components/ContactActions";
 import GeneralBackground from "../../../backgrounds/GeneralBackground";
 import ChatBubble from "./components/ChatBubble";
 import Footer from "./components/Footer";
+import { useEffect, useRef } from "react";
 
-export default function ChatBody() {
-  const chatData = whatsappChats[0];
+type ChatBodyProps = {
+  selectedChatId: number;
+};
+
+export default function ChatBody({ selectedChatId }: ChatBodyProps) {
+  const chatData = whatsappChats.find((chat) => chat.id === selectedChatId);
+  const messagesRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (messagesRef.current) {
+      messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
+    }
+  }, [chatData?.chatHistory]);
+
+  if (!chatData) return null;
 
   return (
     <main className={styles.chatbodyContainer}>
@@ -23,7 +37,11 @@ export default function ChatBody() {
         </Topbar>
 
         {/* IndividualChat Component */}
-        <div className={styles.messagesContainer} id="messagesContainer">
+        <div
+          className={styles.messagesContainer}
+          id="messagesContainer"
+          ref={messagesRef}
+        >
           <div className={styles.messagesContent}>
             {chatData.chatHistory.map((chat, index) => {
               {

@@ -4,11 +4,12 @@ import styles from "./ChatCard.module.css";
 
 type ChatcardProps = {
   avatarURL: string;
-  userName: string;
+  userName: React.ReactNode;
   userChatDate: string;
   userLastMessage: string;
   isSelected?: boolean;
   messageStatus?: "sent" | "delivered" | "read";
+  handleClick?: () => void;
 };
 
 export default function ChatCard(props: ChatcardProps) {
@@ -19,9 +20,14 @@ export default function ChatCard(props: ChatcardProps) {
     userLastMessage,
     isSelected,
     messageStatus,
+    handleClick,
   } = props;
+
   return (
-    <div className={`${styles.chatCard} ${isSelected ? styles.selected : ""}`}>
+    <div
+      className={`${styles.chatCard} ${isSelected ? styles.selected : ""}`}
+      onClick={handleClick}
+    >
       <div className={styles.avatarContainer}>
         <ProfileAvatar url={avatarURL} size="large" />
       </div>

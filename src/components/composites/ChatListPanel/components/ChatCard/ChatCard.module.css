@@ -52,11 +52,11 @@
   white-space: nowrap;
 }
 
-.contact span {
+.contact > span {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  display: block;
+  display: inline-block;
 }
 
 .time {

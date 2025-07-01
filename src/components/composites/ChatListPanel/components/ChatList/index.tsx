@@ -2,23 +2,61 @@ import ChatCard from "../ChatCard";
 import { whatsappChats } from "../../../../../data/userData.ts";
 import styles from "./ChatList.module.css";
 
-export default function ChatList() {
+type ChatListProps = {
+  selectedChatId: number;
+  handleSelectedChat: (id: number) => void;
+  searchTerm: string;
+};
+
+export default function ChatList({
+  selectedChatId,
+  handleSelectedChat,
+  searchTerm,
+}: ChatListProps) {
+  const filteredChats = whatsappChats.filter((chat) =>
+    chat.contactName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  // Function used to highlight text
+  function highlightText(text: string, search: string) {
+    if (!search.trim()) return text;
+    const regex = new RegExp(`(${search})`, "gi");
+    return text.split(regex).map((part, i) =>
+      regex.test(part) ? (
+        <span key={i} className={styles.highlight}>
+          {part}
+        </span>
+      ) : (
+        part
+      )
+    );
+  }
+
   return (
     <div className={styles.listContainer}>
       <div className={styles.list}>
-        {whatsappChats.map((chat) => (
-          <ChatCard
-            key={chat.id}
-            avatarURL={chat.userAvatar}
-            userName={chat.contactName}
-            userChatDate={
-              chat.chatHistory[chat.chatHistory.length - 1].timestamp
-            }
-            userLastMessage={chat.chatHistory[chat.chatHistory.length - 1].text}
-            isSelected={chat.isSelected}
-            messageStatus={chat.messageStatus}
-          />
-        ))}
+        {!filteredChats.length ? (
+          <div className={styles.warningContainer}>
+            <span>{`No hay coincidencias con: "${searchTerm.trim()}"`}</span>
+          </div>
+        ) : (
+          filteredChats.map((chat) => (
+            <ChatCard
+              key={chat.id}
+              handleClick={() => handleSelectedChat(chat.id)}
+              avatarURL={chat.userAvatar}
+              userName={highlightText(chat.contactName, searchTerm)}
+              userChatDate={
+                chat.chatHistory[chat.chatHistory.length - 1].timestamp
+              }
+              userLastMessage={
+                chat.chatHistory[chat.chatHistory.length - 1].text
+              }
+              isSelected={selectedChatId === chat.id}
+              messageStatus={chat.messageStatus}
+            />
+          ))
+        )}
       </div>
     </div>
   );
