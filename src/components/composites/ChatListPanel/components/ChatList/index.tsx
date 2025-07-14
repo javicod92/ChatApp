@@ -3,16 +3,10 @@ import { whatsappChats } from "../../../../../data/userData.ts";
 import styles from "./ChatList.module.css";
 
 type ChatListProps = {
-  selectedChatId: number;
-  handleSelectedChat: (id: number) => void;
   searchTerm: string;
 };
 
-export default function ChatList({
-  selectedChatId,
-  handleSelectedChat,
-  searchTerm,
-}: ChatListProps) {
+export default function ChatList({ searchTerm }: ChatListProps) {
   const filteredChats = whatsappChats.filter((chat) =>
     chat.contactName.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -43,7 +37,7 @@ export default function ChatList({
           filteredChats.map((chat) => (
             <ChatCard
               key={chat.id}
-              handleClick={() => handleSelectedChat(chat.id)}
+              id={chat.id}
               avatarURL={chat.userAvatar}
               userName={highlightText(chat.contactName, searchTerm)}
               userChatDate={
@@ -52,7 +46,6 @@ export default function ChatList({
               userLastMessage={
                 chat.chatHistory[chat.chatHistory.length - 1].text
               }
-              isSelected={selectedChatId === chat.id}
               messageStatus={chat.messageStatus}
             />
           ))

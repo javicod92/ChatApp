@@ -1,27 +1,44 @@
-import { StrictMode, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router";
 import { createRoot } from "react-dom/client";
+import { StrictMode, useEffect, useRef, useState } from "react";
+import Chat from "./pages/Chat";
+import Home from "./pages/Home";
 import Layout from "./layouts";
 import "./styles/global.css";
-import ChatBody from "./components/composites/ChatBody";
-import { whatsappChats } from "./data/userData";
-
-// This import allow you to view all icons saved as React component
-// import IconGallery from "./IconGallery.tsx";
 
 export function App() {
-  const [selectedChatId, setSelectedChatId] = useState(whatsappChats[0].id);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const prevWidth = useRef(window.innerWidth);
 
-  function handleSelectedChat(id: number) {
-    setSelectedChatId(id);
+  // Function used to close the Sidebar component between screen size changes
+  useEffect(() => {
+    function handleResize() {
+      const width = window.innerWidth;
+
+      if (prevWidth.current > 1024 && width <= 1024) {
+        setIsSidebarOpen(false);
+      }
+      prevWidth.current = width;
+    }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  function handleToggleSidebar() {
+    setIsSidebarOpen((prevState) => !prevState);
   }
 
   return (
-    <Layout
-      selectedChatId={selectedChatId}
-      handleSelectedChat={handleSelectedChat}
-    >
-      <ChatBody selectedChatId={selectedChatId} />
-    </Layout>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout handleToggleSidebar={handleToggleSidebar} />}>
+          <Route path="/" element={<Home isSidebarOpen={isSidebarOpen} />}>
+            <Route path="/chat/:id" element={<Chat />} />
+          </Route>
+        </Route>
+        <Route path="*" element={<p>404 Not Found</p>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
@@ -31,10 +48,3 @@ createRoot(document.getElementById("root")!).render(
     <App />
   </StrictMode>
 );
-
-// window.onload = function () {
-//   const container = document.getElementById("messagesContainer");
-//   if (container) {
-//     container.scrollTop = container.scrollHeight;
-//   }
-// };

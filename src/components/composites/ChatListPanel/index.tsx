@@ -6,17 +6,13 @@ import ChatlistActions from "../../ui/Topbar/components/ChatlistActions";
 import styles from "./ChatListPanel.module.css";
 import { ChatList, FilterChips } from "./components";
 
-interface ChatListPanelProps {
+export type ChatListPanelProps = {
   isSidebarOpen: boolean;
-  selectedChatId: number;
-  handleSelectedChat: (id: number) => void;
-}
+  selectedChatId?: number;
+  handleSelectedChat?: (id: number) => void;
+};
 
-export default function ChatListPanel({
-  isSidebarOpen,
-  handleSelectedChat,
-  selectedChatId,
-}: ChatListPanelProps) {
+export default function ChatListPanel({ isSidebarOpen }: ChatListPanelProps) {
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
@@ -36,11 +32,7 @@ export default function ChatListPanel({
       <div className={styles.content}>
         <SearchBar value={searchTerm} onChange={setSearchTerm} />
         <FilterChips />
-        <ChatList
-          selectedChatId={selectedChatId}
-          handleSelectedChat={handleSelectedChat}
-          searchTerm={searchTerm}
-        />
+        <ChatList searchTerm={searchTerm} />
       </div>
     </div>
   );

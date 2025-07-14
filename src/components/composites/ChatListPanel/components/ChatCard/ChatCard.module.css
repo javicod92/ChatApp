@@ -5,6 +5,7 @@
   /* background-color: blueviolet; */
   display: flex;
   cursor: pointer;
+  color: var(--text-primary);
 }
 
 .selected,
