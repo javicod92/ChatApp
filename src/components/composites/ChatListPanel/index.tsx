@@ -5,6 +5,7 @@ import Topbar from "../../ui/Topbar";
 import ChatlistActions from "../../ui/Topbar/components/ChatlistActions";
 import styles from "./ChatListPanel.module.css";
 import { ChatList, FilterChips } from "./components";
+import { useSidebar } from "../../../context/SidebarContext";
 
 export type ChatListPanelProps = {
   isSidebarOpen: boolean;
@@ -12,7 +13,8 @@ export type ChatListPanelProps = {
   handleSelectedChat?: (id: number) => void;
 };
 
-export default function ChatListPanel({ isSidebarOpen }: ChatListPanelProps) {
+export default function ChatListPanel() {
+  const { isSidebarOpen } = useSidebar();
   const [searchTerm, setSearchTerm] = useState("");
 
   return (

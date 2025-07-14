@@ -1,6 +1,7 @@
 import Sidebar from "../components/composites/Sidebar";
 import styles from "./Layout.module.css";
 import { Outlet } from "react-router";
+import { useSidebar } from "../context/SidebarContext";
 
 // type LayoutProps = {
 //   children?: React.ReactNode;
@@ -8,11 +9,9 @@ import { Outlet } from "react-router";
 //   handleSelectedChat?: (id: number) => void;
 // };
 
-type LayoutProps = {
-  handleToggleSidebar: () => void;
-};
+export default function Layout() {
+  const { handleToggleSidebar } = useSidebar();
 
-export default function Layout({ handleToggleSidebar }: LayoutProps) {
   return (
     <div className={styles.container}>
       <Sidebar handleClick={handleToggleSidebar} />
