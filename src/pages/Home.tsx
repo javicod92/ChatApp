@@ -1,5 +1,6 @@
 import { Outlet, useParams } from "react-router";
 import ChatListPanel from "../components/composites/ChatListPanel";
+import WelcomePage from "./WelcomePage";
 
 export default function Home() {
   const params = useParams();
@@ -8,7 +9,7 @@ export default function Home() {
   return (
     <>
       <ChatListPanel />
-      {id ? <Outlet /> : <p>There is nothing 😩</p>}
+      {id ? <Outlet /> : <WelcomePage />}
     </>
   );
 }
