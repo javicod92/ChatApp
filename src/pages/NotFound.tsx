@@ -7,10 +7,10 @@ export default function PageNotFound() {
       <div className={styles.messageContent}>
         <h1>404</h1>
         <div className={styles.description}>
-          <h2>The page does not exist</h2>
+          <h2>¡Ups! The page could not be found</h2>
         </div>
       </div>
-      <Link to={"/"}>Volver al Home</Link>
+      <Link to={"/"}>Go Home</Link>
     </div>
   );
 }
