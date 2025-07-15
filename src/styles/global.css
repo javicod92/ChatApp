@@ -116,6 +116,10 @@ html[data-color-mode="dark"] {
   --footer-focused-color: var(--green-500);
   --footer-caret-color: var(--green-500);
   --footer-placeholder-text-color: rgba(var(--white-rgb), 0.6);
+
+  /* 404 Page */
+  --notFound-divider-color: rgba(var(--white-rgb), 0.25);
+  --linkToHome-text: var(--green-500);
 }
 
 html[data-color-mode="light"] {
@@ -166,6 +170,10 @@ html[data-color-mode="light"] {
   --footer-focused-color: var(--green-500);
   --footer-caret-color: var(--green-500);
   --footer-placeholder-text-color: rgba(var(--black-rgb), 0.6);
+
+  /* 404 Page */
+  --notFound-divider-color: rgba(var(--white-rgb), 0.25);
+  --linkToHome-text: var(--green-500);
 }
 
 html,
