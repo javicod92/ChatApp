@@ -7,6 +7,7 @@ import GeneralBackground from "../../../backgrounds/GeneralBackground";
 import ChatBubble from "./components/ChatBubble";
 import Footer from "./components/Footer";
 import { useEffect, useRef } from "react";
+import { useColorBackground } from "../../../hooks/useColorBackground";
 
 type ChatBodyProps = {
   selectedChatId: number;
@@ -15,6 +16,7 @@ type ChatBodyProps = {
 export default function ChatBody({ selectedChatId }: ChatBodyProps) {
   const chatData = whatsappChats.find((chat) => chat.id === selectedChatId);
   const messagesRef = useRef<HTMLDivElement>(null);
+  const { colorBackground } = useColorBackground();
 
   useEffect(() => {
     if (messagesRef.current) {
@@ -27,7 +29,10 @@ export default function ChatBody({ selectedChatId }: ChatBodyProps) {
   return (
     <main className={styles.chatbodyContainer}>
       <div className={styles.chatbodyWrapper}>
-        <GeneralBackground />
+        <GeneralBackground
+          type={colorBackground.type}
+          variant={colorBackground.variant}
+        />
         <Topbar>
           <ContactDescription
             avatarUrl={chatData.userAvatar}

@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import { useColorMode } from "../../../../hooks/useColorTheme";
 import { RoundedButton } from "../../../ui/Buttons";
 import { MoonIcon, SettingsRefreshed, SunIcon } from "../../../ui/Icons";
@@ -16,9 +17,13 @@ export default function UserOptions() {
           {mode === "light" ? <MoonIcon /> : <SunIcon />}
         </RoundedButton>
 
-        <RoundedButton aria-label="Open settings">
-          <SettingsRefreshed pointerEvents={"none"} />
-        </RoundedButton>
+        <NavLink to={"/settings"}>
+          {({ isActive }) => (
+            <RoundedButton aria-label="Open settings" isSelected={isActive}>
+              <SettingsRefreshed pointerEvents={"none"} />
+            </RoundedButton>
+          )}
+        </NavLink>
 
         <RoundedButton aria-label="Account options">
           <ProfileAvatar size="small" url="/Avatars/image_0002.webp" />

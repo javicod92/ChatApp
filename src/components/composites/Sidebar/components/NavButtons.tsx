@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import { RoundedButton } from "../../../ui/Buttons";
 import {
   ChatFilledRefreshed,
@@ -14,13 +15,17 @@ interface NavButtonsProps {
 export default function NavButtons({ handleClick }: NavButtonsProps) {
   return (
     <nav className={styles.navButtons}>
-      <RoundedButton
-        isSelected={true}
-        handleClick={handleClick}
-        aria-label="Open chat list"
-      >
-        <ChatFilledRefreshed pointerEvents="none" />
-      </RoundedButton>
+      <NavLink to={"/"}>
+        {({ isActive }) => (
+          <RoundedButton
+            isSelected={isActive}
+            handleClick={handleClick}
+            aria-label="Open chat list"
+          >
+            <ChatFilledRefreshed pointerEvents="none" />
+          </RoundedButton>
+        )}
+      </NavLink>
 
       <RoundedButton aria-label="Open states">
         <StatusRefreshed pointerEvents="none" />

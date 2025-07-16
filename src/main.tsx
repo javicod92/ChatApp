@@ -7,6 +7,7 @@ import Layout from "./layouts";
 import "./styles/global.css";
 import { SidebarProvider } from "./context/SidebarContext";
 import NotFound from "./pages/NotFound";
+import Settings from "./pages/Settings";
 
 export function App() {
   return (
@@ -16,6 +17,7 @@ export function App() {
           <Route path="/" element={<Home />}>
             <Route path="/chat/:id" element={<Chat />} />
           </Route>
+          <Route path="/settings" element={<Settings />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
