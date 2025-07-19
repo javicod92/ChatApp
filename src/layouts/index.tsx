@@ -1,7 +1,7 @@
 import Sidebar from "../components/composites/Sidebar";
+import { useSidebar } from "../hooks/useSidebar";
 import styles from "./Layout.module.css";
 import { Outlet } from "react-router";
-import { useSidebar } from "../context/SidebarContext";
 
 // type LayoutProps = {
 //   children?: React.ReactNode;

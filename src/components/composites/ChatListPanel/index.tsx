@@ -5,7 +5,7 @@ import Topbar from "../../ui/Topbar";
 import ChatlistActions from "../../ui/Topbar/components/ChatlistActions";
 import styles from "./ChatListPanel.module.css";
 import { ChatList, FilterChips } from "./components";
-import { useSidebar } from "../../../context/SidebarContext";
+import { useSidebar } from "../../../hooks/useSidebar";
 
 export type ChatListPanelProps = {
   isSidebarOpen: boolean;
