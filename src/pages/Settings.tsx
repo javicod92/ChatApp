@@ -14,16 +14,18 @@ export default function Settings() {
         <h2>Establezca el color del fondo del chat</h2>
       </div>
 
-      <div className={styles.cardsContainer}>
-        <div className={styles.generalContainer}>
-          <div className={styles.colorCards}>
-            {colorsPallette.map((color) => (
-              <div
-                key={color.id}
-                style={{ background: color.color }}
-                onClick={() => handleColorBackground(color.id)}
-              ></div>
-            ))}
+      <div className={styles.cardContent}>
+        <div className={styles.cardsContainer}>
+          <div className={styles.generalContainer}>
+            <div className={styles.colorCards}>
+              {colorsPallette.map((color) => (
+                <div
+                  key={color.id}
+                  style={{ background: color.color }}
+                  onClick={() => handleColorBackground(color.id)}
+                ></div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
