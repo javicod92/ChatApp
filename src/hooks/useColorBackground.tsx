@@ -1,39 +1,18 @@
 import { useEffect, useState } from "react";
 
-type BackgroundType = "solid" | "gradient";
-type ColorBackground = { type: BackgroundType; variant: 0 | 1 | 2 | 3 };
-
-const STORAGE_KEY = "color-background";
-
-function getInitialColorBackground(): ColorBackground {
-  const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored) {
-    try {
-      const parsed = JSON.parse(stored);
-      if (
-        (parsed.type === "solid" || parsed.type === "gradient") &&
-        [0, 1, 2, 3].includes(parsed.variant)
-      ) {
-        return parsed;
-      }
-    } catch {
-      // If an error has occurred, the code continues with its default value.
-    }
-  }
-  return { type: "solid", variant: 0 };
-}
-
 export function useColorBackground() {
-  const [colorBackground, setColorBackground] = useState<ColorBackground>(
-    getInitialColorBackground
-  );
+  const STORAGE_KEY = "color-background";
+
+  const [colorBackground, setColorBackground] = useState<number>(() => {
+    const storedValue = localStorage.getItem(STORAGE_KEY);
+    return storedValue ? Number(storedValue) : 0;
+  });
 
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(colorBackground));
+    localStorage.setItem(STORAGE_KEY, colorBackground.toString());
   }, [colorBackground]);
 
-  return {
-    colorBackground,
-    setColorBackground,
-  };
+  const handleColorBackground = (id: number) => setColorBackground(id);
+
+  return { colorBackground, handleColorBackground };
 }

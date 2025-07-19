@@ -29,10 +29,7 @@ export default function ChatBody({ selectedChatId }: ChatBodyProps) {
   return (
     <main className={styles.chatbodyContainer}>
       <div className={styles.chatbodyWrapper}>
-        <GeneralBackground
-          type={colorBackground.type}
-          variant={colorBackground.variant}
-        />
+        <GeneralBackground id={colorBackground} />
         <Topbar>
           <ContactDescription
             avatarUrl={chatData.userAvatar}

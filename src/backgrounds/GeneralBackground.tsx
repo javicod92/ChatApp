@@ -1,20 +1,12 @@
+import { colorsPallette } from "./colorsPallette";
 import styles from "./GeneralBackground.module.css";
-import { solidColors } from "./backgroundList";
-import { gradients } from "./backgroundList";
-
-type BackgroundType = "solid" | "gradient";
 
 type GeneralBackgroundProps = {
-  type: BackgroundType;
-  variant: 0 | 1 | 2 | 3;
+  id: number;
 };
 
-export default function GeneralBackground({
-  type,
-  variant,
-}: GeneralBackgroundProps) {
-  const background =
-    type === "solid" ? solidColors[variant] : gradients[variant];
+export default function GeneralBackground({ id }: GeneralBackgroundProps) {
+  const background = colorsPallette[id].color;
 
   return (
     <div
