@@ -23,8 +23,14 @@ export function SidebarProvider({ children }: { children: React.ReactNode }) {
     setIsSidebarOpen((prevState) => !prevState);
   }
 
+  function closeSidebar() {
+    setIsSidebarOpen(false);
+  }
+
   return (
-    <SidebarContext.Provider value={{ isSidebarOpen, handleToggleSidebar }}>
+    <SidebarContext.Provider
+      value={{ isSidebarOpen, handleToggleSidebar, closeSidebar }}
+    >
       {children}
     </SidebarContext.Provider>
   );

@@ -2,6 +2,7 @@ import { NavLink, useNavigate } from "react-router";
 import { StatusdblCheck } from "../../../../ui/Icons";
 import ProfileAvatar from "../../../../ui/ProfileAvatar";
 import styles from "./ChatCard.module.css";
+import { useSidebar } from "../../../../../hooks/useSidebar";
 
 type ChatcardProps = {
   avatarURL: string;
@@ -24,8 +25,10 @@ export default function ChatCard(props: ChatcardProps) {
     id,
   } = props;
 
+  const { closeSidebar } = useSidebar();
   const navigate = useNavigate();
   function handleClick() {
+    closeSidebar();
     navigate(`/chat/${id}`);
   }
 
