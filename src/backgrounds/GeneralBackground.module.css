@@ -7,8 +7,8 @@
   /* background: linear-gradient(135deg, #3b0a50, #8e0e4f, #c44536, #ff8800); */
 
   background: linear-gradient(135deg, #e100ff, #2049ff, #0b7dff, #d9ff00);
-  background-size: cover;
-  background-position: center;
+  background-size: auto;
+  /* background-position: center; */
 
   mask-image: url("/Backgrounds/WhapBg.png");
   mask-size: auto;
