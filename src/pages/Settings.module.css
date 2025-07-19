@@ -57,6 +57,10 @@
 }
 
 .colorCards div:hover {
-  box-shadow: inset 0 0 0 4px greenyellow;
+  box-shadow: inset 0 0 0 4px var(--hover-card-border-color);
   cursor: pointer;
+}
+
+.selected {
+  box-shadow: inset 0 0 0 4px var(--selected-card-border-color);
 }

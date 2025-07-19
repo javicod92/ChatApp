@@ -117,6 +117,10 @@ html[data-color-mode="dark"] {
   --footer-caret-color: var(--green-500);
   --footer-placeholder-text-color: rgba(var(--white-rgb), 0.6);
 
+  /* Setting Page */
+  --selected-card-border-color: rgba(var(--white-rgb), 0.8);
+  --hover-card-border-color: var(--green-500);
+
   /* 404 Page */
   --notFound-divider-color: rgba(var(--white-rgb), 0.25);
   --linkToHome-text: var(--green-500);

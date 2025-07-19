@@ -20,6 +20,9 @@ export default function Settings() {
             <div className={styles.colorCards}>
               {colorsPallette.map((color) => (
                 <div
+                  className={
+                    colorBackground === color.id ? styles.selected : ""
+                  }
                   key={color.id}
                   style={{ background: color.color }}
                   onClick={() => handleColorBackground(color.id)}
