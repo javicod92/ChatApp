@@ -1,0 +1,66 @@
+.settingsContainer {
+  width: 100%;
+  height: 100vh;
+  border-left: 1px solid var(--conversation-header-border);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.topBarContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  width: 100%;
+  flex-shrink: 0;
+  background-color: var(--sidebar-background);
+}
+
+.topBarContainer h2 {
+  font-weight: 400;
+  font-size: 1em;
+}
+
+.cardContent {
+  width: 100%;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 10px;
+  flex-shrink: 0;
+}
+
+.generalContainer {
+  width: 100%;
+  max-width: 510px;
+}
+
+.colorCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+
+.colorCards div {
+  height: 100px;
+  border-radius: 20px;
+  transition: all 0.1s ease;
+}
+
+.colorCards div:hover {
+  box-shadow: inset 0 0 0 4px var(--hover-card-border-color);
+  cursor: pointer;
+}
+
+.selected {
+  box-shadow: inset 0 0 0 4px var(--selected-card-border-color);
+}

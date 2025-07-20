@@ -1,6 +1,8 @@
+import { NavLink, useNavigate } from "react-router";
 import { StatusdblCheck } from "../../../../ui/Icons";
 import ProfileAvatar from "../../../../ui/ProfileAvatar";
 import styles from "./ChatCard.module.css";
+import { useSidebar } from "../../../../../hooks/useSidebar";
 
 type ChatcardProps = {
   avatarURL: string;
@@ -10,6 +12,7 @@ type ChatcardProps = {
   isSelected?: boolean;
   messageStatus?: "sent" | "delivered" | "read";
   handleClick?: () => void;
+  id?: number;
 };
 
 export default function ChatCard(props: ChatcardProps) {
@@ -18,14 +21,23 @@ export default function ChatCard(props: ChatcardProps) {
     userName,
     userChatDate,
     userLastMessage,
-    isSelected,
     messageStatus,
-    handleClick,
+    id,
   } = props;
 
+  const { closeSidebar } = useSidebar();
+  const navigate = useNavigate();
+  function handleClick() {
+    closeSidebar();
+    navigate(`/chat/${id}`);
+  }
+
   return (
-    <div
-      className={`${styles.chatCard} ${isSelected ? styles.selected : ""}`}
+    <NavLink
+      to={`/chat/${id}`}
+      className={({ isActive }) =>
+        `${styles.chatCard} ${isActive ? styles.selected : ""}`
+      }
       onClick={handleClick}
     >
       <div className={styles.avatarContainer}>
@@ -49,6 +61,6 @@ export default function ChatCard(props: ChatcardProps) {
           <span>{userLastMessage}</span>
         </div>
       </div>
-    </div>
+    </NavLink>
   );
 }
