@@ -59,4 +59,28 @@ export const colorsPallette: backgroundProps = [
     id: 15,
     color: "linear-gradient(135deg, #3f5efb, #fc466b, #ff6a00, #f9f047)",
   },
+  {
+    id: 16,
+    color: "linear-gradient(135deg, #00ffe0, #00aaff, #7f00ff, #e100ff)",
+  },
+  {
+    id: 17,
+    color: "linear-gradient(135deg, #ff00ff, #ff0099, #cc00ff, #00ffff)",
+  },
+  {
+    id: 18,
+    color: "linear-gradient(135deg, #39ff14, #00ffff, #0088ff, #ff00ff)",
+  },
+  {
+    id: 19,
+    color: "linear-gradient(135deg, #ff0066, #ff00ff, #00ccff, #00ff99)",
+  },
+];
+
+export const backgroundPatterns = [
+  { id: 0, pattern: "/Backgrounds/WhapBg.png" },
+  { id: 1, pattern: "/Backgrounds/pattern-5.png" },
+  { id: 2, pattern: "/Backgrounds/pattern-2.png" },
+  { id: 3, pattern: "/Backgrounds/pattern-3.png" },
+  { id: 4, pattern: "/Backgrounds/pattern-4.png" },
 ];

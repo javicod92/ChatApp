@@ -118,6 +118,8 @@ html[data-color-mode="dark"] {
   --footer-placeholder-text-color: rgba(var(--white-rgb), 0.6);
 
   /* Setting Page */
+  --settingDividerColor: rgba(var(--white-rgb), 0.1);
+  --headerBgColor: var(--gray-800);
   --selected-card-border-color: rgba(var(--white-rgb), 0.8);
   --hover-card-border-color: var(--green-500);
 

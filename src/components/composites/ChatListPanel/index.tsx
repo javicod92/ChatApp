@@ -5,7 +5,7 @@ import Topbar from "../../ui/Topbar";
 import ChatlistActions from "../../ui/Topbar/components/ChatlistActions";
 import styles from "./ChatListPanel.module.css";
 import { ChatList, FilterChips } from "./components";
-import { useSidebar } from "../../../hooks/useSidebar";
+import ContentBox from "../../ui/ContentBox";
 
 export type ChatListPanelProps = {
   isSidebarOpen: boolean;
@@ -14,14 +14,10 @@ export type ChatListPanelProps = {
 };
 
 export default function ChatListPanel() {
-  const { isSidebarOpen } = useSidebar();
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
-    <div
-      className={`${styles.sidebar} ${isSidebarOpen ? styles.sidebarOpen : ""}`}
-      id="sidebar"
-    >
+    <ContentBox>
       {/* WhatsApp logo and action buttons (Header) */}
       <Topbar>
         <div className={styles.logo}>
@@ -36,6 +32,6 @@ export default function ChatListPanel() {
         <FilterChips />
         <ChatList searchTerm={searchTerm} />
       </div>
-    </div>
+    </ContentBox>
   );
 }
