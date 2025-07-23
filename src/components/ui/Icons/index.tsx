@@ -25,3 +25,5 @@ export { default as TailIn } from "./Tail-in";
 export { default as TailOut } from "./Tail-out";
 export { default as SunIcon } from "./SunIcon";
 export { default as MoonIcon } from "./MoonIcon";
+export { default as TashIcon } from "./Tash";
+export { default as AlertTriangleIcon } from "./AlertTriengleIcon";
