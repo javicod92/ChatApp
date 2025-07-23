@@ -7,8 +7,11 @@ import {
   colorsPallette,
 } from "../backgrounds/colorsPallette";
 import { useColorBackground } from "../hooks/useColorBackground";
+import { useState } from "react";
+import ResetModal from "../components/composites/ResetModal";
 
 export default function Settings() {
+  const [showModal, setShowModal] = useState(false);
   const { colorBackground, setBackgroundId, setPatternId } =
     useColorBackground();
 
@@ -70,6 +73,12 @@ export default function Settings() {
               ))}
             </div>
           </div>
+          <button
+            className={styles.leftSidePanelRestoreButton}
+            onClick={() => setShowModal(true)}
+          >
+            Restablecer estilos
+          </button>
         </div>
       </ContentBox>
 
@@ -84,6 +93,7 @@ export default function Settings() {
           <h2>Vista previa del fondo</h2>
         </div>
       </div>
+      {showModal && <ResetModal onClose={() => setShowModal(false)} />}
     </>
   );
 }
