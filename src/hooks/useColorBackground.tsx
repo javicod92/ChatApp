@@ -20,7 +20,10 @@ export function useColorBackground() {
         if (storedValue) {
           const parsedValue = JSON.parse(storedValue);
 
-          if (!parsedValue.backgroundId || !parsedValue.patternId) {
+          if (
+            !(parsedValue.backgroundId !== undefined) ||
+            !(parsedValue.patternId != undefined)
+          ) {
             throw new Error("Stored background settings have invalid format");
           }
 

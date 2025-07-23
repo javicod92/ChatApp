@@ -24,10 +24,11 @@ export default function Settings() {
         <div className={styles.leftSidePanel__cardsContainer}>
           {/* Color Cards Section */}
           <div className={styles.cardsContainer__colorCardsSection}>
-            <h2>Establece el fondo del chat</h2>
+            <h2>Establece el color de fondo del chat</h2>
             <div className={styles.colorCardsSection__gridContainer}>
               {colorsPallette.map((backgroundVariant) => (
                 <div
+                  key={backgroundVariant.id}
                   className={`${styles.gridContainer__card} ${
                     backgroundVariant.id === colorBackground.backgroundId
                       ? styles["gridContainer__card--selected"]
@@ -46,10 +47,11 @@ export default function Settings() {
 
           {/* Patterns Cards Section */}
           <div className={styles.cardsContainer__patternsCardsSection}>
-            <h2>Establece el fondo del chat</h2>
+            <h2>Establece el motivo de fondo del chat</h2>
             <div className={styles.patternsCardsSection__gridContainer}>
               {backgroundPatterns.map((backgroundPattern) => (
                 <div
+                  key={backgroundPattern.id}
                   className={`${styles.gridContainer__card} ${
                     backgroundPattern.id === colorBackground.patternId
                       ? styles["gridContainer__card--selected"]
@@ -60,8 +62,8 @@ export default function Settings() {
                   <div
                     className={styles.card__before}
                     style={{
-                      backgroundImage: `url(${backgroundPattern.pattern})`,
-                      backgroundSize: "200px",
+                      backgroundImage: `url(${backgroundPattern.image})`,
+                      backgroundSize: "cover",
                     }}
                   ></div>
                 </div>

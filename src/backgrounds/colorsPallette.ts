@@ -78,9 +78,29 @@ export const colorsPallette: backgroundProps = [
 ];
 
 export const backgroundPatterns = [
-  { id: 0, pattern: "/Backgrounds/WhapBg.png" },
-  { id: 1, pattern: "/Backgrounds/pattern-5.png" },
-  { id: 2, pattern: "/Backgrounds/pattern-2.png" },
-  { id: 3, pattern: "/Backgrounds/pattern-3.png" },
-  { id: 4, pattern: "/Backgrounds/pattern-4.png" },
+  {
+    id: 0,
+    pattern: "/Backgrounds/WhapBg.png",
+    image: "/Backgrounds/WhapBg_small.png",
+  },
+  {
+    id: 1,
+    pattern: "/Backgrounds/pattern-1.png",
+    image: "/Backgrounds/pattern-1_small.png",
+  },
+  {
+    id: 2,
+    pattern: "/Backgrounds/pattern-2.png",
+    image: "/Backgrounds/pattern-2_small.png",
+  },
+  {
+    id: 3,
+    pattern: "/Backgrounds/pattern-3.png",
+    image: "/Backgrounds/pattern-3_small.png",
+  },
+  {
+    id: 4,
+    pattern: "/Backgrounds/pattern-4.png",
+    image: "/Backgrounds/pattern-4_small.png",
+  },
 ];
