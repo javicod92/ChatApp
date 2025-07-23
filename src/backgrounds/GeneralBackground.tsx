@@ -13,7 +13,6 @@ export default function GeneralBackground({
   const background = colorsPallette[colorId]?.color;
   const patternUrl = backgroundPatterns[patternId]?.pattern;
 
-  console.log(background);
   return (
     <div
       className={styles.backgroundContainer}
