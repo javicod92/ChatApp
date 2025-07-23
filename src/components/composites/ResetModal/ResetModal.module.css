@@ -37,13 +37,13 @@
 
 .modalActions {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1rem;
 }
 
 .cancelButton,
 .confirmButton {
-  padding: 0.5rem 1rem;
+  padding: 10px 40px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -52,11 +52,9 @@
 .cancelButton {
   background-color: #ccc;
   color: #000;
-  padding: 8px 20px;
 }
 
 .confirmButton {
   background-color: #b71008;
   color: white;
-  padding: 8px 20px;
 }
