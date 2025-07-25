@@ -177,6 +177,13 @@ html[data-color-mode="light"] {
   --footer-caret-color: var(--green-500);
   --footer-placeholder-text-color: rgba(var(--black-rgb), 0.6);
 
+  /* Setting Page */
+  --settingDividerColor: rgba(var(--black-rgb), 0.1);
+  --headerBgColor: var(--gray-100);
+  /* --selected-card-border-color: rgba(var(--white-rgb), 0.8); */
+  --selected-card-border-color: var(--green-500);
+  --hover-card-border-color: var(--green-500);
+
   /* 404 Page */
   --notFound-divider-color: rgba(var(--white-rgb), 0.25);
   --linkToHome-text: var(--green-500);
