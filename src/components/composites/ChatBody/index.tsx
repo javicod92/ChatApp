@@ -18,7 +18,7 @@ export default function ChatBody({ selectedChatId }: ChatBodyProps) {
   const chatData = whatsappChats.find((chat) => chat.id === selectedChatId);
   const messagesRef = useRef<HTMLDivElement>(null);
   const { colorBackground } = useColorBackground();
-  const { isSidebarOpen, closeSidebar } = useSidebar();
+  const { isSidebarOpen } = useSidebar();
 
   useEffect(() => {
     if (messagesRef.current) {
@@ -77,9 +77,7 @@ export default function ChatBody({ selectedChatId }: ChatBodyProps) {
           <Footer />
         </div>
       </div>
-      {isSidebarOpen && (
-        <div className={styles.ContainerBlur} onClick={closeSidebar}></div>
-      )}
+      {isSidebarOpen && <div className={styles.ContainerBlur}></div>}
     </main>
   );
 }

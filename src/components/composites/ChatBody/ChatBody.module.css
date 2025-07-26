@@ -55,6 +55,7 @@
 
 @media screen and (min-width: 1024px) {
   .ContainerBlur {
-    visibility: hidden;
+    /* visibility: hidden; */
+    display: none;
   }
 }
