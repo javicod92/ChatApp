@@ -6,25 +6,26 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  border-left: 1px solid var(--conversation-header-border);
+  border-right: 1px solid var(--conversation-header-border);
   flex-wrap: nowrap;
   flex-shrink: 0;
   position: absolute;
   top: 0;
-  left: -100%;
+  left: 64px;
+  transform: translateX(-100%);
   z-index: 100;
-  transition: left 0.3s ease-in-out;
+  transition: transform 0.15s ease;
 }
 
 .sidebarOpen {
-  left: 64px;
+  transform: translateX(0);
 }
 
 @media screen and (min-width: 1024px) {
   .sidebar {
     position: static;
-    left: 0;
     transition: none;
     z-index: 1;
+    transform: translateX(0);
   }
 }
