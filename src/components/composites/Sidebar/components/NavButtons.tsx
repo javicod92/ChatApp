@@ -17,7 +17,17 @@ export default function NavButtons({ handleClick }: NavButtonsProps) {
 
   return (
     <nav className={styles.navButtons}>
-      <NavLink to={"/"}>
+      <NavLink
+        to={"/"}
+        onClick={(e) => {
+          if (
+            location.pathname === "/" ||
+            location.pathname.startsWith("/chat/")
+          ) {
+            e.preventDefault();
+          }
+        }}
+      >
         {({ isActive }) => {
           const shouldBeActive =
             isActive || location.pathname.startsWith("/chat/");
