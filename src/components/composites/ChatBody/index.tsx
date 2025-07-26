@@ -8,6 +8,7 @@ import ChatBubble from "./components/ChatBubble";
 import Footer from "./components/Footer";
 import { useEffect, useRef } from "react";
 import { useColorBackground } from "../../../hooks/useColorBackground";
+import { useSidebar } from "../../../hooks/useSidebar";
 
 type ChatBodyProps = {
   selectedChatId: number;
@@ -17,6 +18,7 @@ export default function ChatBody({ selectedChatId }: ChatBodyProps) {
   const chatData = whatsappChats.find((chat) => chat.id === selectedChatId);
   const messagesRef = useRef<HTMLDivElement>(null);
   const { colorBackground } = useColorBackground();
+  const { isSidebarOpen, closeSidebar } = useSidebar();
 
   useEffect(() => {
     if (messagesRef.current) {
@@ -75,6 +77,9 @@ export default function ChatBody({ selectedChatId }: ChatBodyProps) {
           <Footer />
         </div>
       </div>
+      {isSidebarOpen && (
+        <div className={styles.ContainerBlur} onClick={closeSidebar}></div>
+      )}
     </main>
   );
 }
