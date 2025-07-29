@@ -5,8 +5,8 @@ export const chatsDB: chatsDBProps[] = [
     id: 1,
     name: "Pablo Demarchi",
     avatar: "/Avatars/image_0000.webp",
-    lastMessage: "",
-    lastMessageTime: new Date(Date.now() - 5 * 60 * 1000),
+    lastMessage: "Avísame y llevo birras 😏",
+    lastMessageTime: "5 min",
     unreadCount: 0,
     isOnline: true,
     messages: [
@@ -269,10 +269,9 @@ export const chatsDB: chatsDBProps[] = [
     name: "Martín Pérez",
     avatar: "/Avatars/image_0002.webp",
     lastMessage: "Sí, de una, que venga si jajajaja.",
-    lastMessageTime: new Date(Date.now() - 30 * 60 * 1000), // 30 minutes ago,
+    lastMessageTime: "30 min",
     unreadCount: 0,
     isOnline: false,
-    lastSeen: new Date(Date.now() - 15 * 60 * 1000),
     messages: [
       {
         text: "Che, al final vas a la juntada el sábado?",
@@ -533,7 +532,7 @@ export const chatsDB: chatsDBProps[] = [
     name: "Andrea Gómez",
     avatar: "/Avatars/image_0003.webp",
     lastMessage: "No, tranqui, voy directo. Nos vemos allá!",
-    lastMessageTime: new Date(Date.now() - 2 * 60 * 60 * 1000), // 2 hours ago
+    lastMessageTime: "2 hs",
     unreadCount: 1,
     isOnline: true,
     messages: [
@@ -663,7 +662,7 @@ export const chatsDB: chatsDBProps[] = [
     name: "Alberto Torres",
     avatar: "/Avatars/image_0004.webp",
     lastMessage: "Obvio, te mando foto.",
-    lastMessageTime: new Date(Date.now() - 4 * 60 * 60 * 1000), // 4 hours ago
+    lastMessageTime: "4 hs",
     unreadCount: 0,
     isOnline: false,
     messages: [
@@ -793,10 +792,9 @@ export const chatsDB: chatsDBProps[] = [
     name: "Franco Fernández",
     avatar: "/Avatars/image_0005.webp",
     lastMessage: "Cualquier cosa avisame, estoy en la compu.",
-    lastMessageTime: new Date(Date.now() - 24 * 60 * 60 * 1000), // 1 day ago
+    lastMessageTime: "1 day",
     unreadCount: 0,
     isOnline: false,
-    lastSeen: new Date(Date.now() - 12 * 60 * 60 * 1000),
     messages: [
       {
         text: "Che, necesito una mano con el proyecto.",
@@ -924,7 +922,7 @@ export const chatsDB: chatsDBProps[] = [
     name: "Jorge Martínez",
     avatar: "/Avatars/image_0006.webp",
     lastMessage: "Gracias, igualmente!",
-    lastMessageTime: new Date(Date.now() - 24 * 60 * 60 * 1000), // 1 day ago
+    lastMessageTime: "1 day",
     unreadCount: 0,
     isOnline: true,
     messages: [
@@ -1054,7 +1052,7 @@ export const chatsDB: chatsDBProps[] = [
     name: "Sofía Ramírez",
     avatar: "/Avatars/image_0007.webp",
     lastMessage: "Gracias genia! 🥳",
-    lastMessageTime: new Date(Date.now() - 24 * 60 * 60 * 1000), // 1 day ago
+    lastMessageTime: "1 day",
     unreadCount: 0,
     isOnline: true,
     messages: [
@@ -1079,7 +1077,7 @@ export const chatsDB: chatsDBProps[] = [
     name: "Marco Perdomo",
     avatar: "/Avatars/image_0008.webp",
     lastMessage: "Ey Marco, puedo pasar por tu casa a buscar los apuntes?",
-    lastMessageTime: new Date(Date.now() - 24 * 60 * 60 * 1000), // 1 day ago
+    lastMessageTime: "1 day",
     unreadCount: 0,
     isOnline: false,
     messages: [
@@ -1104,7 +1102,7 @@ export const chatsDB: chatsDBProps[] = [
     name: "Paula Lezcano",
     avatar: "/Avatars/image_0009.webp",
     lastMessage: "Hola Pau, sigue estando para pasar a buscarlo?",
-    lastMessageTime: new Date(Date.now() - 24 * 60 * 60 * 1000), // 1 day ago
+    lastMessageTime: "30 min",
     unreadCount: 0,
     isOnline: false,
     messages: [
@@ -1129,7 +1127,7 @@ export const chatsDB: chatsDBProps[] = [
     name: "Pedro Falcón",
     avatar: "/Avatars/image_0010.webp",
     lastMessage: "Todavía no pude, pero mañana sin falta te lo paso.",
-    lastMessageTime: new Date(Date.now() - 24 * 60 * 60 * 1000), // 1 day ago
+    lastMessageTime: "15 min",
     unreadCount: 0,
     isOnline: false,
     messages: [
@@ -1154,7 +1152,7 @@ export const chatsDB: chatsDBProps[] = [
     name: "Lucía Méndez",
     avatar: "/Avatars/image_0011.webp",
     lastMessage: "Sí, todo perfecto. Gracias che.",
-    lastMessageTime: new Date(Date.now() - 24 * 60 * 60 * 1000), // 1 day ago
+    lastMessageTime: "2 min",
     unreadCount: 0,
     isOnline: true,
     messages: [
@@ -1179,7 +1177,7 @@ export const chatsDB: chatsDBProps[] = [
     name: "Diego Rivera",
     avatar: "/Avatars/image_0012.webp",
     lastMessage: "Dale! Voy a estar al toque.",
-    lastMessageTime: new Date(Date.now() - 24 * 60 * 60 * 1000), // 1 day ago
+    lastMessageTime: "18 min",
     unreadCount: 0,
     isOnline: false,
     messages: [
@@ -1204,7 +1202,7 @@ export const chatsDB: chatsDBProps[] = [
     name: "Valeria Suárez",
     avatar: "/Avatars/image_0013.webp",
     lastMessage: "Obvio! Te lo mando ya.",
-    lastMessageTime: new Date(Date.now() - 24 * 60 * 60 * 1000), // 1 day ago
+    lastMessageTime: "1 min",
     unreadCount: 0,
     isOnline: false,
     messages: [
@@ -1229,7 +1227,7 @@ export const chatsDB: chatsDBProps[] = [
     name: "Camila Quintana",
     avatar: "/Avatars/image_0014.webp",
     lastMessage: "Dale! Después de cenar me conecto.",
-    lastMessageTime: new Date(Date.now() - 24 * 60 * 60 * 1000), // 1 day ago
+    lastMessageTime: "1 day",
     unreadCount: 0,
     isOnline: false,
     messages: [
@@ -1254,7 +1252,7 @@ export const chatsDB: chatsDBProps[] = [
     name: "Matías Ortega",
     avatar: "/Avatars/image_0015.webp",
     lastMessage: "Sí, ya les respondí. Vos qué onda?",
-    lastMessageTime: new Date(Date.now() - 24 * 60 * 60 * 1000), // 1 day ago
+    lastMessageTime: "1 min",
     unreadCount: 0,
     isOnline: false,
     messages: [

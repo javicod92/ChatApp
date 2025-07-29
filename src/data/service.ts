@@ -1,4 +1,4 @@
-import { chatsDB, getNextChatId, getNextMessageId } from "../data/chats.js";
+import { chatsDB, getNextChatId, getNextMessageId } from "./chatDB";
 
 // Simulate API delay
 const delay = (ms = 300) => new Promise((resolve) => setTimeout(resolve, ms));
