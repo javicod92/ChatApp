@@ -1,7 +1,7 @@
 export type ChatMessageProps = {
   id: number;
   text: string;
-  timestamp: string;
+  timestamp: Date;
   sender: "contact" | "me";
   status: "delivered" | "read";
 };
@@ -11,7 +11,7 @@ export type chatsDBProps = {
   name: string;
   avatar: string;
   lastMessage: string;
-  lastMessageTime: string;
+  lastMessageTime: Date;
   unreadCount: number;
   isOnline: boolean;
   lastSeen?: string;

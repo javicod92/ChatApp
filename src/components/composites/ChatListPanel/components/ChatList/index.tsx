@@ -1,14 +1,28 @@
 import ChatCard from "../ChatCard";
-import { whatsappChats } from "../../../../../data/userData.ts";
 import styles from "./ChatList.module.css";
+import { chatService } from "../../../../../data/service.ts";
+import formatTimestampForChat from "../../../../../utils/formatTimestampForChat.ts";
+import { useQuery } from "@tanstack/react-query";
+import ChatListSkeleton from "../ChatListSkeleton/index.tsx";
 
 type ChatListProps = {
   searchTerm: string;
 };
 
 export default function ChatList({ searchTerm }: ChatListProps) {
-  const filteredChats = whatsappChats.filter((chat) =>
-    chat.contactName.toLowerCase().includes(searchTerm.toLowerCase())
+  const loadChats = () => chatService.getAllChats();
+
+  const { data: chatList, isLoading } = useQuery({
+    queryKey: ["chatList"],
+    queryFn: loadChats,
+  });
+
+  if (isLoading) {
+    return [...Array(15)].map((_, i) => <ChatListSkeleton key={i} />);
+  }
+
+  const filteredChats = chatList?.filter((chat) =>
+    chat.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   // Function used to highlight text
@@ -29,7 +43,7 @@ export default function ChatList({ searchTerm }: ChatListProps) {
   return (
     <div className={styles.listContainer}>
       <div className={styles.list}>
-        {!filteredChats.length ? (
+        {!filteredChats?.length ? (
           <div className={styles.warningContainer}>
             <span>{`No hay coincidencias con: "${searchTerm.trim()}"`}</span>
           </div>
@@ -38,15 +52,15 @@ export default function ChatList({ searchTerm }: ChatListProps) {
             <ChatCard
               key={chat.id}
               id={chat.id}
-              avatarURL={chat.userAvatar}
-              userName={highlightText(chat.contactName, searchTerm)}
+              avatarURL={chat.avatar}
+              userName={highlightText(chat.name, searchTerm)}
               userChatDate={
-                chat.chatHistory[chat.chatHistory.length - 1].timestamp
+                formatTimestampForChat(
+                  chat.messages[chat.messages.length - 1].timestamp
+                ).time
               }
-              userLastMessage={
-                chat.chatHistory[chat.chatHistory.length - 1].text
-              }
-              messageStatus={chat.messageStatus}
+              userLastMessage={chat.messages[chat.messages.length - 1].text}
+              messageStatus={chat.messages[chat.messages.length - 1].status}
             />
           ))
         )}

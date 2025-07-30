@@ -1,4 +1,5 @@
-import { chatsDB, getNextChatId, getNextMessageId } from "./chatDB";
+import type { chatsDBProps } from "../types/chat";
+import { chatsDB, getNextChatId, getNextMessageId } from "./chatsDB";
 
 // Simulate API delay
 const delay = (ms = 300) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -6,23 +7,25 @@ const delay = (ms = 300) => new Promise((resolve) => setTimeout(resolve, ms));
 // Mock API service for chat operations
 export const chatService = {
   // GET all chats
-  async getAllChats() {
+  async getAllChats(): Promise<chatsDBProps[]> {
     await delay(200);
     const stored = localStorage.getItem("chatsDB");
-    const chats = stored ? JSON.parse(stored) : [...chatsDB];
+    const chats: chatsDBProps[] = stored ? JSON.parse(stored) : [...chatsDB];
 
     // Sort by last message time (most recent first)
     return chats.sort(
-      (a, b) => new Date(b.lastMessageTime) - new Date(a.lastMessageTime)
+      (a, b) =>
+        new Date(b.lastMessageTime).getTime() -
+        new Date(a.lastMessageTime).getTime()
     );
   },
 
   // GET chat by ID
-  async getChatById(id) {
+  async getChatById(id: number): Promise<chatsDBProps> {
     await delay(100);
     const stored = localStorage.getItem("chatsDB");
     const chats = stored ? JSON.parse(stored) : chatsDB;
-    const chat = chats.find((c) => c.id === parseInt(id));
+    const chat = chats.find((c: chatsDBProps) => c.id === Number(id));
     if (!chat) {
       throw new Error("Chat not found");
     }
@@ -30,7 +33,7 @@ export const chatService = {
   },
 
   // GET messages for a chat
-  async getMessages(chatId) {
+  async getMessages(chatId: number) {
     await delay(150);
     const chat = await this.getChatById(chatId);
     return chat.messages || [];

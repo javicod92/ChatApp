@@ -8,6 +8,9 @@ import Chat from "./pages/Chat";
 import Home from "./pages/Home";
 import Layout from "./layouts";
 import "./styles/global.css";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 export function App() {
   return (
@@ -28,8 +31,10 @@ export function App() {
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     {/* <IconGallery /> */}
-    <SidebarProvider>
-      <App />
-    </SidebarProvider>
+    <QueryClientProvider client={queryClient}>
+      <SidebarProvider>
+        <App />
+      </SidebarProvider>
+    </QueryClientProvider>
   </StrictMode>
 );

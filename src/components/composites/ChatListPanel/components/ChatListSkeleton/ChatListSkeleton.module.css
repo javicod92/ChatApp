@@ -1,0 +1,53 @@
+.skeletonCard {
+  display: flex;
+  align-items: center;
+  margin: 4px 10px;
+  height: 72px;
+  border-radius: 10px;
+  background: var(--chatCard-bg, #222);
+  gap: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
+  padding: 0 13px;
+}
+
+.skeletonAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #797979 0%, #cecece 50%, #797979 100%);
+  animation: skeleton-loading 1.5s infinite linear;
+  flex-shrink: 0;
+}
+
+.skeletonContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skeletonLineShort,
+.skeletonLineLong {
+  height: 14px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #616161 0%, #818181 50%, #616161 100%);
+  animation: skeleton-loading 1.2s infinite linear;
+}
+
+.skeletonLineShort {
+  width: 40%;
+}
+
+.skeletonLineLong {
+  width: 80%;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
