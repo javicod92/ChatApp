@@ -1,9 +1,10 @@
-import ChatCard from "../ChatCard";
-import styles from "./ChatList.module.css";
-import { chatService } from "../../../../../data/service.ts";
 import formatTimestampForChat from "../../../../../utils/formatTimestampForChat.ts";
-import { useQuery } from "@tanstack/react-query";
+import type { chatsDBProps } from "../../../../../types/chat.ts";
+import { chatService } from "../../../../../data/service.ts";
 import ChatListSkeleton from "../ChatListSkeleton/index.tsx";
+import { useQuery } from "@tanstack/react-query";
+import styles from "./ChatList.module.css";
+import ChatCard from "../ChatCard";
 
 type ChatListProps = {
   searchTerm: string;
@@ -17,11 +18,7 @@ export default function ChatList({ searchTerm }: ChatListProps) {
     queryFn: loadChats,
   });
 
-  if (isLoading) {
-    return [...Array(15)].map((_, i) => <ChatListSkeleton key={i} />);
-  }
-
-  const filteredChats = chatList?.filter((chat) =>
+  const filteredChats = chatList?.filter((chat: chatsDBProps) =>
     chat.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -43,12 +40,14 @@ export default function ChatList({ searchTerm }: ChatListProps) {
   return (
     <div className={styles.listContainer}>
       <div className={styles.list}>
-        {!filteredChats?.length ? (
+        {isLoading ? (
+          [...Array(15)].map((_, i) => <ChatListSkeleton key={i} />)
+        ) : !filteredChats?.length ? (
           <div className={styles.warningContainer}>
             <span>{`No hay coincidencias con: "${searchTerm.trim()}"`}</span>
           </div>
         ) : (
-          filteredChats.map((chat) => (
+          filteredChats.map((chat: chatsDBProps) => (
             <ChatCard
               key={chat.id}
               id={chat.id}
