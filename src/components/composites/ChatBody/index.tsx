@@ -1,31 +1,39 @@
-import Topbar from "../../ui/Topbar";
-import styles from "./ChatBody.module.css";
-import { whatsappChats } from "../../../data/userData";
+import GeneralBackground from "../../../backgrounds/GeneralBackground";
+import { useColorBackground } from "../../../hooks/useColorBackground";
 import ContactDescription from "./components/ContactDescription";
 import ContactActions from "./components/ContactActions";
-import GeneralBackground from "../../../backgrounds/GeneralBackground";
-import ChatBubble from "./components/ChatBubble";
-import Footer from "./components/Footer";
-import { useEffect, useRef } from "react";
-import { useColorBackground } from "../../../hooks/useColorBackground";
 import { useSidebar } from "../../../hooks/useSidebar";
+import { chatService } from "../../../data/service";
+import ChatBubble from "./components/ChatBubble";
+import { useQuery } from "@tanstack/react-query";
+import styles from "./ChatBody.module.css";
+import { useEffect, useRef } from "react";
+import Footer from "./components/Footer";
+import Topbar from "../../ui/Topbar";
 
 type ChatBodyProps = {
   selectedChatId: number;
 };
 
 export default function ChatBody({ selectedChatId }: ChatBodyProps) {
-  const chatData = whatsappChats.find((chat) => chat.id === selectedChatId);
   const messagesRef = useRef<HTMLDivElement>(null);
   const { colorBackground } = useColorBackground();
   const { isSidebarOpen } = useSidebar();
+
+  const loadChat = () => chatService.getChatById(selectedChatId);
+
+  const { data: chatData, isLoading } = useQuery({
+    queryKey: ["chatBody", selectedChatId],
+    queryFn: loadChat,
+  });
 
   useEffect(() => {
     if (messagesRef.current) {
       messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
     }
-  }, [chatData?.chatHistory]);
+  }, [chatData?.messages]);
 
+  if (isLoading) return <p>Cargando...</p>;
   if (!chatData) return null;
 
   return (
@@ -37,8 +45,8 @@ export default function ChatBody({ selectedChatId }: ChatBodyProps) {
         />
         <Topbar>
           <ContactDescription
-            avatarUrl={chatData.userAvatar}
-            contactName={chatData.contactName}
+            avatarUrl={chatData.avatar}
+            contactName={chatData.name}
           />
           <ContactActions />
         </Topbar>
@@ -50,20 +58,22 @@ export default function ChatBody({ selectedChatId }: ChatBodyProps) {
           ref={messagesRef}
         >
           <div className={styles.messagesContent}>
-            {chatData.chatHistory.map((chat, index) => {
+            {chatData.messages.map((chat, index) => {
               {
                 /* function used for grouping messages from the same referrer */
               }
-              const previousMSG = chatData.chatHistory[index - 1];
-              const isSameReferrer = previousMSG?.sentByMe === chat.sentByMe;
+              const previousMSG = chatData.messages[index - 1];
+              const isSameReferrer = previousMSG?.sender === chat.sender;
               const marginTop = isSameReferrer ? "2px" : "12px";
 
               return (
                 <div style={{ marginTop }} key={index}>
                   <ChatBubble
+                    id={chat.id}
+                    status={chat.status}
                     text={chat.text}
                     timestamp={chat.timestamp}
-                    sentByMe={chat.sentByMe}
+                    sender={chat.sender}
                     hasATail={!isSameReferrer}
                   />
                 </div>
