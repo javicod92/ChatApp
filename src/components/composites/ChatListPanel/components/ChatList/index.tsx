@@ -41,7 +41,7 @@ export default function ChatList({ searchTerm }: ChatListProps) {
     <div className={styles.listContainer}>
       <div className={styles.list}>
         {isLoading ? (
-          [...Array(15)].map((_, i) => <ChatListSkeleton key={i} />)
+          [...Array(5)].map((_, i) => <ChatListSkeleton key={i} />)
         ) : !filteredChats?.length ? (
           <div className={styles.warningContainer}>
             <span>{`No hay coincidencias con: "${searchTerm.trim()}"`}</span>
