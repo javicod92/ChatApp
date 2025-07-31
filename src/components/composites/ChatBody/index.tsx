@@ -10,6 +10,7 @@ import styles from "./ChatBody.module.css";
 import { useEffect, useRef } from "react";
 import Footer from "./components/Footer";
 import Topbar from "../../ui/Topbar";
+import Spinner from "../../ui/Spinner";
 
 type ChatBodyProps = {
   selectedChatId: number;
@@ -33,7 +34,7 @@ export default function ChatBody({ selectedChatId }: ChatBodyProps) {
     }
   }, [chatData?.messages]);
 
-  if (isLoading) return <p>Cargando...</p>;
+  if (isLoading) return <Spinner />;
   if (!chatData) return null;
 
   return (
