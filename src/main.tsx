@@ -8,9 +8,7 @@ import Chat from "./pages/Chat";
 import Home from "./pages/Home";
 import Layout from "./layouts";
 import "./styles/global.css";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
-const queryClient = new QueryClient();
+import { queryClient, QueryClientProvider } from "./lib/react-query";
 
 export function App() {
   return (

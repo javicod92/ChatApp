@@ -85,7 +85,7 @@ export default function ChatBody({ selectedChatId }: ChatBodyProps) {
 
         {/* Footer Component */}
         <div className={styles.footer}>
-          <Footer />
+          <Footer chatId={selectedChatId} />
         </div>
       </div>
       {isSidebarOpen && <div className={styles.ContainerBlur}></div>}

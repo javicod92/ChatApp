@@ -1,4 +1,4 @@
-import type { chatsDBProps } from "../types/chat";
+import type { ChatMessageProps, chatsDBProps } from "../types/chat";
 import { chatsDB, getNextChatId, getNextMessageId } from "./chatsDB";
 
 // Simulate API delay
@@ -40,18 +40,21 @@ export const chatService = {
   },
 
   // POST - Send new message
-  async sendMessage(chatId, messageText) {
+  async sendMessage(
+    chatId: number,
+    messageText: string
+  ): Promise<ChatMessageProps> {
     await delay(200);
     const stored = localStorage.getItem("chatsDB");
-    const chats = stored ? JSON.parse(stored) : [...chatsDB];
+    const chats: chatsDBProps[] = stored ? JSON.parse(stored) : [...chatsDB];
 
-    const chatIndex = chats.findIndex((c) => c.id === parseInt(chatId));
+    const chatIndex = chats.findIndex((c) => c.id === Number(chatId));
     if (chatIndex === -1) {
       throw new Error("Chat not found");
     }
 
-    const newMessage = {
-      id: getNextMessageId(parseInt(chatId)),
+    const newMessage: ChatMessageProps = {
+      id: getNextMessageId(Number(chatId)),
       text: messageText,
       timestamp: new Date(),
       sender: "me",
