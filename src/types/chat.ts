@@ -3,7 +3,7 @@ export type ChatMessageProps = {
   text: string;
   timestamp: Date;
   sender: "contact" | "me";
-  status: "delivered" | "read" | "sent";
+  status?: "delivered" | "read" | "sent";
 };
 
 export type chatsDBProps = {

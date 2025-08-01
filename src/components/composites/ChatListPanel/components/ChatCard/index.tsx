@@ -51,13 +51,15 @@ export default function ChatCard(props: ChatcardProps) {
           <div className={styles.time}>{userChatDate}</div>
         </div>
         <div className={styles.lastMessage}>
-          <div
-            className={`${styles.checkIcon} ${
-              messageStatus === "read" ? styles.messageRead : ""
-            }`}
-          >
-            <StatusdblCheck />
-          </div>
+          {messageStatus && (
+            <div
+              className={`${styles.checkIcon} ${
+                messageStatus === "read" ? styles.messageRead : ""
+              }`}
+            >
+              <StatusdblCheck />
+            </div>
+          )}
           <span>{userLastMessage}</span>
         </div>
       </div>

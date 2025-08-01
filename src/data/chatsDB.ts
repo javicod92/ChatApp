@@ -14,7 +14,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Che al final encontraste el lugar para estacionar?",
         timestamp: new Date(Date.now() - 36 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 1,
       },
       {
@@ -28,7 +27,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Bueno joya, ya entro entonces!",
         timestamp: new Date(Date.now() - 34 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 3,
       },
       {
@@ -42,7 +40,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Mal! La escena donde pelean en el agua me dejó loco 😱, estaban muy buenos los efectos la verdad y encima el sonido era brutal, aunque por ahí se saturaba un poco nomás 😂😂😂😂😂, pero todo lo demas estubo súper",
         timestamp: new Date(Date.now() - 32 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 5,
       },
       {
@@ -56,7 +53,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Después te paso un video con teorías que vi en YouTube jajaj",
         timestamp: new Date(Date.now() - 30 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 7,
       },
       {
@@ -84,7 +80,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Che y mañana qué onda? Vas a lo de Nico?",
         timestamp: new Date(Date.now() - 26 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 11,
       },
       {
@@ -98,7 +93,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Uh amigo, todo bien?",
         timestamp: new Date(Date.now() - 24 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 13,
       },
       {
@@ -112,7 +106,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Te entiendo. Si querés venite a casa y comemos algo, sin plan ni nada.",
         timestamp: new Date(Date.now() - 22 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 15,
       },
       {
@@ -126,7 +119,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Para eso estamos pa",
         timestamp: new Date(Date.now() - 20 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 17,
       },
       {
@@ -140,7 +132,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Dale, te espero con empanadas 😎",
         timestamp: new Date(Date.now() - 18 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 19,
       },
       {
@@ -154,7 +145,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Che viste lo de la tormenta?",
         timestamp: new Date(Date.now() - 16 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 21,
       },
       {
@@ -175,21 +165,18 @@ export const chatsDB: chatsDBProps[] = [
         text: "Acá también. No puedo prepararme ni el café, encima me levante temprano para terminar de hacer un trabajo. y bueno... lo dejaré para después de comer 🤣🤣🤣",
         timestamp: new Date(Date.now() - 13 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 24,
       },
       {
         text: "Iagual, creo que es mejor descansar y esperar a que pase todo",
         timestamp: new Date(Date.now() - 12 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 25,
       },
       {
         text: "Por las dudas voy a desenchufar mis cosas jajaja",
         timestamp: new Date(Date.now() - 11 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 26,
       },
       {
@@ -217,7 +204,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Che me olvidé de contarte, me llamaron de laburo nuevo",
         timestamp: new Date(Date.now() - 7 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 30,
       },
       {
@@ -231,7 +217,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Gracias loco, todavía no lo puedo creer jajaja",
         timestamp: new Date(Date.now() - 5 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 32,
       },
       {
@@ -252,7 +237,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Ni hablar. Este finde armamos algo.",
         timestamp: new Date(Date.now() - 2 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 35,
       },
       {
@@ -277,21 +261,18 @@ export const chatsDB: chatsDBProps[] = [
         text: "Che, al final vas a la juntada el sábado?",
         timestamp: new Date(Date.now() - 45 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 1,
       },
       {
         text: "Mirá que no podes faltar amigo vos he jajaja, hace mucho no nos vemos así que nos viene de 10",
         timestamp: new Date(Date.now() - 44 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 2,
       },
       {
         text: "Tenemos que ponernos al día con nuestras cosas 🤣🤣🤣🤣",
         timestamp: new Date(Date.now() - 43 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 3,
       },
       {
@@ -319,7 +300,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Tipo 8 voy maso, pero podés caer antes si querés así habalmos.",
         timestamp: new Date(Date.now() - 39 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 7,
       },
       {
@@ -333,14 +313,12 @@ export const chatsDB: chatsDBProps[] = [
         text: "Buenísimo, traé la Play si podés de paso 🤣🤣🤣🤣.",
         timestamp: new Date(Date.now() - 37 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 9,
       },
       {
         text: "La mia dejó de andar hace unos 2 mesesmaso 😑😑😑😑",
         timestamp: new Date(Date.now() - 36 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 10,
       },
       {
@@ -375,14 +353,12 @@ export const chatsDB: chatsDBProps[] = [
         text: "Dalee perfecto, me parece genial jajajaja. Viene el Nico, la Vale, el Fede y capaz la Sofi.",
         timestamp: new Date(Date.now() - 31 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 15,
       },
       {
         text: "Despues otros amigos de Eli que no se quienes son jajajaja",
         timestamp: new Date(Date.now() - 30 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 16,
       },
       {
@@ -396,7 +372,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Sí, encima dice que anda con ganas de salir jajajaja 🤣🤣.",
         timestamp: new Date(Date.now() - 28 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 18,
       },
       {
@@ -410,7 +385,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Lo que vos quieras tomas nomás, acá creeria que va a haber algo, pero no sé que.",
         timestamp: new Date(Date.now() - 26 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 20,
       },
       {
@@ -438,7 +412,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Sí, si querés traete un par de bolsas por las dudas.",
         timestamp: new Date(Date.now() - 22 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 24,
       },
       {
@@ -452,7 +425,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "No, yo creo que con eso estamos. Nos vemos el sábado amigazo!",
         timestamp: new Date(Date.now() - 20 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 26,
       },
       {
@@ -480,7 +452,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Que copado amigo, suena re interesante jajaja. Che tenés la direccion del lugar? sino te paso.",
         timestamp: new Date(Date.now() - 16 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 30,
       },
       {
@@ -494,7 +465,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Es en la casa de siempre, la de la esquina con el portón verde.",
         timestamp: new Date(Date.now() - 14 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 32,
       },
       {
@@ -508,7 +478,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Vas a venir con alguien?",
         timestamp: new Date(Date.now() - 12 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 34,
       },
       {
@@ -522,7 +491,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Sí, de una, que venga si jajajaja.",
         timestamp: new Date(Date.now() - 10 * 60 * 1000),
         sender: "contact",
-        status: "delivered",
         id: 36,
       },
     ],
@@ -540,7 +508,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Nos vemos en el café tipo 5?",
         timestamp: new Date(Date.now() - (60 + 16) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 1,
       },
       {
@@ -561,7 +528,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "No hace falta, tranqui.",
         timestamp: new Date(Date.now() - (60 + 13) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 4,
       },
       {
@@ -575,14 +541,12 @@ export const chatsDB: chatsDBProps[] = [
         text: "Jajaja, sos un crack",
         timestamp: new Date(Date.now() - (60 + 11) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 6,
       },
       {
         text: "¿Te acordás dónde queda el café, no?",
         timestamp: new Date(Date.now() - (60 + 10) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 7,
       },
       {
@@ -596,7 +560,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Ese mismo. Igual te paso la ubicación por las dudas.",
         timestamp: new Date(Date.now() - (60 + 8) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 9,
       },
       {
@@ -610,7 +573,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Listo, te la mandé por WhatsApp.",
         timestamp: new Date(Date.now() - (60 + 6) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 11,
       },
       {
@@ -624,7 +586,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "¿Vas a ir en auto o en bondi?",
         timestamp: new Date(Date.now() - (60 + 4) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 13,
       },
       {
@@ -638,7 +599,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Buenísimo, gracias!",
         timestamp: new Date(Date.now() - (60 + 2) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 15,
       },
       {
@@ -652,7 +612,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "No, tranqui, voy directo. Nos vemos allá!",
         timestamp: new Date(Date.now() - 60 * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 17,
       },
     ],
@@ -670,7 +629,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Te viste el último capi de la serie?",
         timestamp: new Date(Date.now() - (2 * 60 + 33) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 1,
       },
       {
@@ -691,14 +649,12 @@ export const chatsDB: chatsDBProps[] = [
         text: "Yo tampoco, me dejó re manija.",
         timestamp: new Date(Date.now() - (2 * 60 + 25) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 4,
       },
       {
         text: "¿Cuándo sale el próximo?",
         timestamp: new Date(Date.now() - (2 * 60 + 23) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 5,
       },
       {
@@ -712,14 +668,12 @@ export const chatsDB: chatsDBProps[] = [
         text: "Uff, falta una banda.",
         timestamp: new Date(Date.now() - (2 * 60 + 20) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 7,
       },
       {
         text: "Encima vi teorías re locas en Twitter.",
         timestamp: new Date(Date.now() - (2 * 60 + 15) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 8,
       },
       {
@@ -733,7 +687,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Después te paso el hilo, está buenísimo.",
         timestamp: new Date(Date.now() - (2 * 60 + 11) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 10,
       },
       {
@@ -747,7 +700,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "¿Ya comiste?",
         timestamp: new Date(Date.now() - (2 * 60 + 9) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 12,
       },
       {
@@ -761,7 +713,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Pedite una pizza, es la que va.",
         timestamp: new Date(Date.now() - (2 * 60 + 6) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 14,
       },
       {
@@ -775,7 +726,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Jajaja, después contame si estaba buena.",
         timestamp: new Date(Date.now() - (2 * 60 + 1) * 60 * 1000), // 2 hours 1 min
         sender: "contact",
-        status: "read",
         id: 16,
       },
       {
@@ -800,7 +750,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Che, necesito una mano con el proyecto.",
         timestamp: new Date(Date.now() - (2 * 60 + 30) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 1,
       },
       {
@@ -814,7 +763,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "No entiendo bien cómo hacer el login.",
         timestamp: new Date(Date.now() - (2 * 60 + 24) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 3,
       },
       {
@@ -828,7 +776,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Sí, te lo paso por mail.",
         timestamp: new Date(Date.now() - (2 * 60 + 22) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 5,
       },
       {
@@ -842,7 +789,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Listo, ya te lo mandé.",
         timestamp: new Date(Date.now() - (2 * 60 + 20) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 7,
       },
       {
@@ -856,7 +802,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "¿Te paso mi usuario y clave de prueba?",
         timestamp: new Date(Date.now() - (2 * 60 + 18) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 9,
       },
       {
@@ -870,7 +815,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Usuario: franco, clave: 1234",
         timestamp: new Date(Date.now() - (2 * 60 + 16) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 11,
       },
       {
@@ -884,7 +828,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "¿Te tira algún error?",
         timestamp: new Date(Date.now() - (2 * 60 + 14) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 13,
       },
       {
@@ -898,7 +841,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Ah, seguro es por el estado. Fijate si lo actualizás bien.",
         timestamp: new Date(Date.now() - (2 * 60 + 12) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 15,
       },
       {
@@ -912,7 +854,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Cualquier cosa avisame, estoy en la compu.",
         timestamp: new Date(Date.now() - (2 * 60 + 10) * 60 * 1000), // 2 hours 10 mins
         sender: "contact",
-        status: "read",
         id: 17,
       },
     ],
@@ -937,7 +878,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Sí, bancá que lo busco.",
         timestamp: new Date(Date.now() - (2 * 60 + 45) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 2,
       },
       {
@@ -951,14 +891,12 @@ export const chatsDB: chatsDBProps[] = [
         text: "No hay drama, para eso estamos.",
         timestamp: new Date(Date.now() - (2 * 60 + 43) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 4,
       },
       {
         text: "Te lo mando por mail o por acá?",
         timestamp: new Date(Date.now() - (2 * 60 + 42) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 5,
       },
       {
@@ -972,7 +910,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Listo, ahí va el PDF.",
         timestamp: new Date(Date.now() - (2 * 60 + 40) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 7,
       },
       {
@@ -986,7 +923,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Ya estudiaste algo?",
         timestamp: new Date(Date.now() - (2 * 60 + 38) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 9,
       },
       {
@@ -1000,14 +936,12 @@ export const chatsDB: chatsDBProps[] = [
         text: "Tranqui, yo tampoco arranqué fuerte.",
         timestamp: new Date(Date.now() - (2 * 60 + 36) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 11,
       },
       {
         text: "Querés que repasemos juntos después?",
         timestamp: new Date(Date.now() - (2 * 60 + 35) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 12,
       },
       {
@@ -1021,7 +955,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Dale, tipo 5 te va?",
         timestamp: new Date(Date.now() - (2 * 60 + 33) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 14,
       },
       {
@@ -1035,7 +968,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Dale, suerte con el estudio!",
         timestamp: new Date(Date.now() - (2 * 60 + 31) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 16,
       },
       {
@@ -1060,7 +992,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Feliz cumple 🎉",
         timestamp: new Date(Date.now() - (3 * 60 + 10) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 1,
       },
       {
@@ -1085,7 +1016,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Buen día, revisaste el informe?",
         timestamp: new Date(Date.now() - (3 * 60 + 15) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 1,
       },
       {
@@ -1110,7 +1040,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Buen día, miraste el informe?",
         timestamp: new Date(Date.now() - (4 * 60 + 5) * 60 * 1000), // 4 hours 5 mins
         sender: "contact",
-        status: "read",
         id: 1,
       },
       {
@@ -1135,7 +1064,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Buen día, revisaste el informe?",
         timestamp: new Date(Date.now() - (4 * 60 + 22) * 60 * 1000),
         sender: "contact",
-        status: "read",
         id: 1,
       },
       {
@@ -1160,7 +1088,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Te llegó el paquete al final?",
         timestamp: new Date(Date.now() - (4 * 60 + 30) * 60 * 1000), // 4 hours 30 mins
         sender: "contact",
-        status: "read",
         id: 1,
       },
       {
@@ -1185,7 +1112,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Tenemos la reunión a las 3 eh.",
         timestamp: new Date(Date.now() - (5 * 60 + 5) * 60 * 1000), // 5 hours 5 mins
         sender: "contact",
-        status: "read",
         id: 1,
       },
       {
@@ -1210,7 +1136,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Me pasás el archivo?",
         timestamp: new Date(Date.now() - (5 * 60 + 40) * 60 * 1000), // 5 hours 40 mins
         sender: "contact",
-        status: "read",
         id: 1,
       },
       {
@@ -1235,7 +1160,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Jugamos esta noche?",
         timestamp: new Date(Date.now() - (5 * 60 + 45) * 60 * 1000), // 5 hours 45 mins
         sender: "contact",
-        status: "read",
         id: 1,
       },
       {
@@ -1260,7 +1184,6 @@ export const chatsDB: chatsDBProps[] = [
         text: "Viste el correo de RRHH?",
         timestamp: new Date(Date.now() - (6 * 60 + 1) * 60 * 1000), // 6 hours 1 min
         sender: "contact",
-        status: "read",
         id: 1,
       },
       {
