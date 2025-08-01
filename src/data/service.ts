@@ -1,3 +1,4 @@
+import { queryClient } from "../lib/react-query";
 import type { ChatMessageProps, chatsDBProps } from "../types/chat";
 import { chatsDB, getNextChatId, getNextMessageId } from "./chatsDB";
 
@@ -68,14 +69,14 @@ export const chatService = {
     localStorage.setItem("chatsDB", JSON.stringify(chats));
 
     // Simulate message status updates
-    setTimeout(
-      () => this.updateMessageStatus(chatId, newMessage.id, "delivered"),
-      1000
-    );
-    setTimeout(
-      () => this.updateMessageStatus(chatId, newMessage.id, "read"),
-      3000
-    );
+    setTimeout(() => {
+      this.updateMessageStatus(chatId, newMessage.id, "delivered");
+      queryClient.invalidateQueries({ queryKey: ["chatList"] });
+    }, 1000);
+    setTimeout(() => {
+      this.updateMessageStatus(chatId, newMessage.id, "read");
+      queryClient.invalidateQueries({ queryKey: ["chatList"] });
+    }, 3000);
 
     return newMessage;
   },

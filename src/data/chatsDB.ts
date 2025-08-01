@@ -1274,14 +1274,22 @@ export const chatsDB: chatsDBProps[] = [
   },
 ];
 
-// Get next available ID for chats
+// Get next available ID for chats (I think this function should also take the chat stored in LocalStorage)
 export const getNextChatId = () => {
   return Math.max(...chatsDB.map((chat) => chat.id)) + 1;
 };
 
 // Get next available ID for messages
 export const getNextMessageId = (chatId: number) => {
-  const chat = chatsDB.find((c) => c.id === chatId);
-  if (!chat || !chat.messages.length) return 1;
-  return Math.max(...chat.messages.map((msg) => msg.id)) + 1;
+  let chats: chatsDBProps[] = [];
+  try {
+    const stored = localStorage.getItem("chatsDB");
+    chats = stored ? JSON.parse(stored) : [...chatsDB];
+  } catch {
+    chats = [...chatsDB];
+  }
+  const chat = chats.find((c) => c.id === chatId);
+  if (!chat || !Array.isArray(chat.messages) || chat.messages.length === 0)
+    return 1;
+  return Math.max(...chat.messages.map((msg) => Number(msg.id) || 0)) + 1;
 };
