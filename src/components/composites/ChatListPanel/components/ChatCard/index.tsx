@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from "react-router";
-import { StatusdblCheck } from "../../../../ui/Icons";
+import { MsgCheckSent, StatusdblCheck } from "../../../../ui/Icons";
 import ProfileAvatar from "../../../../ui/ProfileAvatar";
 import styles from "./ChatCard.module.css";
 import { useSidebar } from "../../../../../hooks/useSidebar";
@@ -57,7 +57,7 @@ export default function ChatCard(props: ChatcardProps) {
                 messageStatus === "read" ? styles.messageRead : ""
               }`}
             >
-              <StatusdblCheck />
+              {messageStatus !== "sent" ? <StatusdblCheck /> : <MsgCheckSent />}
             </div>
           )}
           <span>{userLastMessage}</span>

@@ -1,5 +1,10 @@
 import styles from "./ChatBubble.module.css";
-import { TailIn, TailOut } from "../../../ui/Icons";
+import {
+  MsgdblCheck,
+  StatusSentSmall,
+  TailIn,
+  TailOut,
+} from "../../../ui/Icons";
 import type { ChatMessageProps } from "../../../../types/chat";
 import formatTimestampForChat from "../../../../utils/formatTimestampForChat";
 
@@ -10,6 +15,7 @@ export default function ChatBubble({
   timestamp,
   sender,
   hasATail,
+  status,
 }: ChatBubbleProps) {
   return (
     <div
@@ -32,9 +38,29 @@ export default function ChatBubble({
           <span>{text}</span>
           <span className={styles.messageDateHidden}>
             {formatTimestampForChat(timestamp).time}
+            {status === "sent" ? (
+              <StatusSentSmall />
+            ) : status === "delivered" || status === "read" ? (
+              <span>
+                <MsgdblCheck />
+              </span>
+            ) : (
+              ""
+            )}
           </span>
           <div className={styles.messageDate}>
-            {formatTimestampForChat(timestamp).time}
+            <span>{formatTimestampForChat(timestamp).time}</span>
+            {status === "sent" ? (
+              <StatusSentSmall />
+            ) : status === "delivered" || status === "read" ? (
+              <span>
+                <MsgdblCheck
+                  className={status === "read" ? styles.readCheck : ""}
+                />
+              </span>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </div>

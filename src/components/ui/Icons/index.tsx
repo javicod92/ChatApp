@@ -27,3 +27,5 @@ export { default as SunIcon } from "./SunIcon";
 export { default as MoonIcon } from "./MoonIcon";
 export { default as TashIcon } from "./Tash";
 export { default as AlertTriangleIcon } from "./AlertTriengleIcon";
+export { default as StatusSentSmall } from "./StatusSentSmall";
+export { default as MsgCheckSent } from "./MsgCheckSent";

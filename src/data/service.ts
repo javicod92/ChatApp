@@ -71,10 +71,12 @@ export const chatService = {
     // Simulate message status updates
     setTimeout(() => {
       this.updateMessageStatus(chatId, newMessage.id, "delivered");
+      queryClient.invalidateQueries({ queryKey: ["chatBody"] });
       queryClient.invalidateQueries({ queryKey: ["chatList"] });
     }, 1000);
     setTimeout(() => {
       this.updateMessageStatus(chatId, newMessage.id, "read");
+      queryClient.invalidateQueries({ queryKey: ["chatBody"] });
       queryClient.invalidateQueries({ queryKey: ["chatList"] });
     }, 3000);
 
