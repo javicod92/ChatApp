@@ -1,53 +1,150 @@
-.skeletonCard {
-  display: flex;
-  align-items: center;
-  margin: 4px 10px;
+.chatCard {
+  margin: 0 10px;
   height: 72px;
   border-radius: 10px;
-  background: var(--chatCard-bg, #222);
-  gap: 4px;
-  overflow: hidden;
-  flex-shrink: 0;
+  /* background-color: blueviolet; */
+  display: flex;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+.selected {
+  /* background-color: var(--chatCard-bg); */
+  background-color: #4b4b4b36;
+}
+
+.avatarContainer {
   padding: 0 13px;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
-.skeletonAvatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: linear-gradient(90deg, #797979 0%, #cecece 50%, #797979 100%);
-  animation: skeleton-loading 1.5s infinite linear;
-  flex-shrink: 0;
+.avatar {
+  width: 49px;
+  height: 49px;
+  border-radius: 9999px;
+  background: linear-gradient(
+    90deg,
+    #9e9e9e 0%,
+    #808080 30%,
+    #666666 50%,
+    #808080 70%,
+    #9e9e9e 100%
+  );
+  background-size: 200% 100%;
+  animation: translateBackground 0.25s linear infinite;
 }
 
-.skeletonContent {
-  flex: 1;
+.cardDescription {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  justify-content: center;
+  padding-right: 20px;
+  width: 100%;
+  overflow: hidden;
+  gap: 6px;
 }
 
-.skeletonLineShort,
-.skeletonLineLong {
-  height: 14px;
-  border-radius: 6px;
-  background: linear-gradient(90deg, #616161 0%, #818181 50%, #616161 100%);
-  animation: skeleton-loading 1.2s infinite linear;
+.lastMessage {
+  font-size: 1.4rem;
+  font-weight: 300;
 }
 
-.skeletonLineShort {
+.descriptionContact {
+  display: flex;
+  align-items: center;
+  line-height: normal;
+  text-align: left;
+  flex-wrap: nowrap;
+}
+
+.contact {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+  font-size: 17px;
+  font-weight: 400;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.contact > div {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  height: 16px;
+  min-width: 100px;
   width: 40%;
+  border-radius: 9999px;
+  background: linear-gradient(
+    90deg,
+    #9e9e9e 0%,
+    #808080 30%,
+    #666666 50%,
+    #808080 70%,
+    #9e9e9e 100%
+  );
+  background-size: 200% 100%;
+  animation: translateBackground 0.5s linear infinite;
 }
 
-.skeletonLineLong {
+.time {
+  margin-top: 3px;
+  margin-left: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 400;
+  white-space: nowrap;
+  max-width: 100%;
+  font-size: 12px;
+}
+
+.lastMessage {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.checkIcon {
+  display: flex;
+  align-items: center;
+}
+
+.lastMessage div {
+  margin-left: 2px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 14px;
+  min-width: 100px;
   width: 80%;
+  border-radius: 9999px;
+  background: linear-gradient(
+    90deg,
+    #9e9e9e 0%,
+    #808080 30%,
+    #666666 50%,
+    #808080 70%,
+    #9e9e9e 100%
+  );
+  background-size: 200% 100%;
+  animation: translateBackground 0.5s linear infinite;
 }
 
-@keyframes skeleton-loading {
+.messageRead {
+  color: var(--cgatCard-read-color);
+}
+
+@keyframes translateBackground {
   0% {
-    background-position: -200px 0;
+    background-position: 100% 0;
   }
   100% {
-    background-position: calc(200px + 100%) 0;
+    background-position: -100% 0;
   }
 }
