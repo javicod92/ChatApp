@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { WhatsAppRefreshed } from "../../ui/Icons";
 import SearchBar from "../../ui/SearchBar";
 import Topbar from "../../ui/Topbar";
@@ -6,6 +6,8 @@ import ChatlistActions from "../../ui/Topbar/components/ChatlistActions";
 import styles from "./ChatListPanel.module.css";
 import { ChatList, FilterChips } from "./components";
 import ContentBox from "../../ui/ContentBox";
+import ChatListSkeleton from "./components/ChatListSkeleton";
+import { ErrorBoundary } from "react-error-boundary";
 
 export type ChatListPanelProps = {
   isSidebarOpen: boolean;
@@ -30,8 +32,30 @@ export default function ChatListPanel() {
       <div className={styles.content}>
         <SearchBar value={searchTerm} onChange={setSearchTerm} />
         <FilterChips />
-        <ChatList searchTerm={searchTerm} />
+
+        <div className={styles.listContainer}>
+          <div className={styles.list}>
+            <ErrorBoundary FallbackComponent={FallbackErrorChatList}>
+              <Suspense
+                fallback={[...Array(6)].map(() => (
+                  <ChatListSkeleton />
+                ))}
+              >
+                <ChatList searchTerm={searchTerm} />
+              </Suspense>
+            </ErrorBoundary>
+          </div>
+        </div>
       </div>
     </ContentBox>
+  );
+}
+
+function FallbackErrorChatList({ error }: { error: Error }) {
+  return (
+    <div className={styles.errorContainer}>
+      <h3>¡Ups! Ocurrió un error al cargar los chats.</h3>
+      <pre>{error.message}</pre>
+    </div>
   );
 }
