@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from "react-router";
-import { StatusdblCheck } from "../../../../ui/Icons";
+import { MsgCheckSent, StatusdblCheck } from "../../../../ui/Icons";
 import ProfileAvatar from "../../../../ui/ProfileAvatar";
 import styles from "./ChatCard.module.css";
 import { useSidebar } from "../../../../../hooks/useSidebar";
@@ -51,13 +51,15 @@ export default function ChatCard(props: ChatcardProps) {
           <div className={styles.time}>{userChatDate}</div>
         </div>
         <div className={styles.lastMessage}>
-          <div
-            className={`${styles.checkIcon} ${
-              messageStatus === "read" ? styles.messageRead : ""
-            }`}
-          >
-            <StatusdblCheck />
-          </div>
+          {messageStatus && (
+            <div
+              className={`${styles.checkIcon} ${
+                messageStatus === "read" ? styles.messageRead : ""
+              }`}
+            >
+              {messageStatus !== "sent" ? <StatusdblCheck /> : <MsgCheckSent />}
+            </div>
+          )}
           <span>{userLastMessage}</span>
         </div>
       </div>
