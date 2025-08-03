@@ -5,12 +5,11 @@ import ContactActions from "./components/ContactActions";
 import { useSidebar } from "../../../hooks/useSidebar";
 import { chatService } from "../../../data/service";
 import ChatBubble from "./components/ChatBubble";
-import { useQuery } from "@tanstack/react-query";
+import { useSuspenseQuery } from "@tanstack/react-query";
 import styles from "./ChatBody.module.css";
 import { useEffect, useRef } from "react";
 import Footer from "./components/Footer";
 import Topbar from "../../ui/Topbar";
-import Spinner from "../../ui/Spinner";
 
 type ChatBodyProps = {
   selectedChatId: number;
@@ -23,7 +22,7 @@ export default function ChatBody({ selectedChatId }: ChatBodyProps) {
 
   const loadChat = () => chatService.getChatById(selectedChatId);
 
-  const { data: chatData, isLoading } = useQuery({
+  const { data: chatData } = useSuspenseQuery({
     queryKey: ["chatBody", selectedChatId],
     queryFn: loadChat,
   });
@@ -34,7 +33,6 @@ export default function ChatBody({ selectedChatId }: ChatBodyProps) {
     }
   }, [chatData?.messages]);
 
-  if (isLoading) return <Spinner />;
   if (!chatData) return null;
 
   return (

@@ -37,8 +37,8 @@ export default function ChatListPanel() {
           <div className={styles.list}>
             <ErrorBoundary FallbackComponent={FallbackErrorChatList}>
               <Suspense
-                fallback={[...Array(6)].map(() => (
-                  <ChatListSkeleton />
+                fallback={[...Array(6)].map((_, index) => (
+                  <ChatListSkeleton key={index} />
                 ))}
               >
                 <ChatList searchTerm={searchTerm} />
