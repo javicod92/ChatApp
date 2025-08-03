@@ -84,14 +84,18 @@ export const chatService = {
   },
 
   // PUT - Update message status
-  async updateMessageStatus(chatId, messageId, status) {
+  async updateMessageStatus(
+    chatId: number,
+    messageId: number,
+    status: "sent" | "delivered" | "read"
+  ): Promise<void> {
     const stored = localStorage.getItem("chatsDB");
-    const chats = stored ? JSON.parse(stored) : [...chatsDB];
+    const chats: chatsDBProps[] = stored ? JSON.parse(stored) : [...chatsDB];
 
-    const chatIndex = chats.findIndex((c) => c.id === parseInt(chatId));
+    const chatIndex = chats.findIndex((c) => c.id === Number(chatId));
     if (chatIndex !== -1) {
       const messageIndex = chats[chatIndex].messages.findIndex(
-        (m) => m.id === parseInt(messageId)
+        (m) => m.id === Number(messageId)
       );
       if (messageIndex !== -1) {
         chats[chatIndex].messages[messageIndex].status = status;
@@ -101,12 +105,12 @@ export const chatService = {
   },
 
   // PUT - Mark chat as read
-  async markChatAsRead(chatId) {
+  async markChatAsRead(chatId: number) {
     await delay(100);
     const stored = localStorage.getItem("chatsDB");
-    const chats = stored ? JSON.parse(stored) : [...chatsDB];
+    const chats: chatsDBProps[] = stored ? JSON.parse(stored) : [...chatsDB];
 
-    const chatIndex = chats.findIndex((c) => c.id === parseInt(chatId));
+    const chatIndex = chats.findIndex((c) => c.id === Number(chatId));
     if (chatIndex !== -1) {
       chats[chatIndex].unreadCount = 0;
       localStorage.setItem("chatsDB", JSON.stringify(chats));
@@ -114,10 +118,10 @@ export const chatService = {
   },
 
   // Search chats
-  async searchChats(query) {
+  async searchChats(query: string) {
     await delay(150);
     const stored = localStorage.getItem("chatsDB");
-    const chats = stored ? JSON.parse(stored) : chatsDB;
+    const chats: chatsDBProps[] = stored ? JSON.parse(stored) : chatsDB;
 
     if (!query) return chats;
 
@@ -129,10 +133,10 @@ export const chatService = {
   },
 
   // POST - Create new chat
-  async createChat(contactData) {
+  async createChat(contactData: chatsDBProps) {
     await delay(300);
     const stored = localStorage.getItem("chatsDB");
-    const chats = stored ? JSON.parse(stored) : [...chatsDB];
+    const chats: chatsDBProps[] = stored ? JSON.parse(stored) : [...chatsDB];
 
     const newChat = {
       id: getNextChatId(),
