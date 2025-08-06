@@ -1,11 +1,13 @@
 @font-face {
   font-family: "Inter";
+  font-style: normal;
   src: url("/Fonts/Inter.ttf");
   font-weight: 100 900;
 }
 
 @font-face {
-  font-family: "Inter-italic";
+  font-family: "Inter";
+  font-style: italic;
   src: url("/Fonts/InterItalic.ttf");
   font-weight: 100 900;
 }
@@ -48,6 +50,7 @@
   box-sizing: border-box;
   scrollbar-width: thin;
   scrollbar-color: rgba(var(--black-rgb), 0.2) transparent;
+  font-family: "Inter", "Segoe UI", Roboto;
 }
 
 html[data-color-mode="dark"] * {
@@ -118,6 +121,8 @@ html[data-color-mode="dark"] {
   --footer-placeholder-text-color: rgba(var(--white-rgb), 0.6);
 
   /* Setting Page */
+  --settingDividerColor: rgba(var(--white-rgb), 0.1);
+  --headerBgColor: var(--gray-800);
   --selected-card-border-color: rgba(var(--white-rgb), 0.8);
   --hover-card-border-color: var(--green-500);
 
@@ -174,6 +179,13 @@ html[data-color-mode="light"] {
   --footer-focused-color: var(--green-500);
   --footer-caret-color: var(--green-500);
   --footer-placeholder-text-color: rgba(var(--black-rgb), 0.6);
+
+  /* Setting Page */
+  --settingDividerColor: rgba(var(--black-rgb), 0.1);
+  --headerBgColor: var(--gray-100);
+  /* --selected-card-border-color: rgba(var(--white-rgb), 0.8); */
+  --selected-card-border-color: var(--green-500);
+  --hover-card-border-color: var(--green-500);
 
   /* 404 Page */
   --notFound-divider-color: rgba(var(--white-rgb), 0.25);

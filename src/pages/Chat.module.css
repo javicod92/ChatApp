@@ -1,0 +1,14 @@
+.errorContainer {
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}
+
+.textContainer h3,
+.textContainer pre {
+  text-wrap: wrap;
+  white-space: wrap;
+}

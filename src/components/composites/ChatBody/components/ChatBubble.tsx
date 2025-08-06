@@ -1,22 +1,31 @@
 import styles from "./ChatBubble.module.css";
-import type { ChatMessage } from "../../../../data/userData";
-import { TailIn, TailOut } from "../../../ui/Icons";
+import {
+  MsgdblCheck,
+  StatusSentSmall,
+  TailIn,
+  TailOut,
+} from "../../../ui/Icons";
+import type { ChatMessageProps } from "../../../../types/chat";
+import formatTimestampForChat from "../../../../utils/formatTimestampForChat";
 
-type ChatBubbleProps = ChatMessage & { hasATail: boolean };
+type ChatBubbleProps = ChatMessageProps & { hasATail: boolean };
 
 export default function ChatBubble({
   text,
   timestamp,
-  sentByMe,
+  sender,
   hasATail,
+  status,
 }: ChatBubbleProps) {
   return (
     <div
-      className={`${styles.messageWrapper} ${sentByMe ? styles.sentByMe : ""}`}
+      className={`${styles.messageWrapper} ${
+        sender === "me" ? styles.sentByMe : ""
+      }`}
     >
       <div className={styles.messageCard}>
         {hasATail &&
-          (!sentByMe ? (
+          (!(sender === "me") ? (
             <span className={styles.cardTailLeft} aria-hidden="true">
               <TailIn />
             </span>
@@ -27,8 +36,32 @@ export default function ChatBubble({
           ))}
         <div className={styles.messageContent}>
           <span>{text}</span>
-          <span className={styles.messageDateHidden}>{timestamp}</span>
-          <div className={styles.messageDate}>{timestamp}</div>
+          <span className={styles.messageDateHidden}>
+            {formatTimestampForChat(timestamp).time}
+            {status === "sent" ? (
+              <StatusSentSmall />
+            ) : status === "delivered" || status === "read" ? (
+              <span>
+                <MsgdblCheck />
+              </span>
+            ) : (
+              ""
+            )}
+          </span>
+          <div className={styles.messageDate}>
+            <span>{formatTimestampForChat(timestamp).time}</span>
+            {status === "sent" ? (
+              <StatusSentSmall />
+            ) : status === "delivered" || status === "read" ? (
+              <span>
+                <MsgdblCheck
+                  className={status === "read" ? styles.readCheck : ""}
+                />
+              </span>
+            ) : (
+              ""
+            )}
+          </div>
         </div>
       </div>
     </div>
