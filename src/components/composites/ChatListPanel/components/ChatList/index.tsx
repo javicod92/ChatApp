@@ -11,7 +11,6 @@ type ChatListProps = {
 
 export default function ChatList({ searchTerm }: ChatListProps) {
   const loadChats = () => chatService.getAllChats();
-  console.log("Iniciando fetch...");
 
   const { data: chatList } = useSuspenseQuery({
     queryKey: ["chatList"],

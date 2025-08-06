@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Layout from "./layouts";
 import "./styles/global.css";
 import { queryClient, QueryClientProvider } from "./lib/react-query";
+import FormProvider from "./providers/FormProvider";
 
 export function App() {
   return (
@@ -30,9 +31,11 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     {/* <IconGallery /> */}
     <QueryClientProvider client={queryClient}>
-      <SidebarProvider>
-        <App />
-      </SidebarProvider>
+      <FormProvider>
+        <SidebarProvider>
+          <App />
+        </SidebarProvider>
+      </FormProvider>
     </QueryClientProvider>
   </StrictMode>
 );

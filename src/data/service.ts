@@ -133,26 +133,48 @@ export const chatService = {
   },
 
   // POST - Create new chat
-  async createChat(contactData: chatsDBProps) {
+  async createChat(contactData: {
+    name: string;
+    avatar?: string;
+    message: string;
+  }) {
     await delay(300);
     const stored = localStorage.getItem("chatsDB");
     const chats: chatsDBProps[] = stored ? JSON.parse(stored) : [...chatsDB];
 
-    const newChat = {
+    const newChat: chatsDBProps = {
       id: getNextChatId(),
       name: contactData.name,
-      avatar:
-        contactData.avatar ||
-        "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=100",
+      avatar: contactData.avatar || "/Avatars/default.png",
       lastMessage: "",
       lastMessageTime: new Date(),
       unreadCount: 0,
       isOnline: false,
-      messages: [],
+      messages: [
+        {
+          id: 1,
+          text: contactData.message,
+          timestamp: new Date(),
+          sender: "me",
+          status: "sent",
+        },
+      ],
     };
 
     chats.push(newChat);
     localStorage.setItem("chatsDB", JSON.stringify(chats));
+
+    // Simulate message status updates
+    setTimeout(() => {
+      this.updateMessageStatus(newChat.id, newChat.messages[0].id, "delivered");
+      queryClient.invalidateQueries({ queryKey: ["chatBody"] });
+      queryClient.invalidateQueries({ queryKey: ["chatList"] });
+    }, 1000);
+    setTimeout(() => {
+      this.updateMessageStatus(newChat.id, newChat.messages[0].id, "read");
+      queryClient.invalidateQueries({ queryKey: ["chatBody"] });
+      queryClient.invalidateQueries({ queryKey: ["chatList"] });
+    }, 3000);
     return newChat;
   },
 };

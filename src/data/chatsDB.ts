@@ -1197,9 +1197,16 @@ export const chatsDB: chatsDBProps[] = [
   },
 ];
 
-// Get next available ID for chats (I think this function should also take the chat stored in LocalStorage)
+// Get next available ID for chats
 export const getNextChatId = () => {
-  return Math.max(...chatsDB.map((chat) => chat.id)) + 1;
+  let chats: chatsDBProps[] = [];
+  try {
+    const stored = localStorage.getItem("chatsDB");
+    chats = stored ? JSON.parse(stored) : [...chatsDB];
+  } catch {
+    chats = [...chatsDB];
+  }
+  return Math.max(...chats.map((chat) => chat.id)) + 1;
 };
 
 // Get next available ID for messages

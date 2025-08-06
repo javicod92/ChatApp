@@ -1,0 +1,33 @@
+.buttonXlContainer {
+  padding: 10px;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  font-weight: 400;
+  gap: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.gray {
+  background-color: #ccc;
+  color: #000;
+}
+
+.green {
+  background-color: #31ac00;
+  color: white;
+}
+
+.orange {
+  background-color: #b71008;
+  color: white;
+}
+
+.buttonXlContainer:hover {
+  background-color: rgb(41, 41, 41);
+  color: white;
+}
