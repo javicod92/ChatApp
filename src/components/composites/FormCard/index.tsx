@@ -8,10 +8,12 @@ import { queryClient } from "../../../lib/react-query";
 import { useNavigate } from "react-router";
 
 export default function FormCard() {
-  const { formData, setIsFormOpen } = useFormContext();
+  const { formData, setFormData, setIsFormOpen } = useFormContext();
   const navigate = useNavigate();
+  const isButtonDisabled = !(formData.name && formData.message);
 
   function handleClick() {
+    setFormData({});
     setIsFormOpen(false);
   }
 
@@ -31,7 +33,7 @@ export default function FormCard() {
     onSuccess: (newChat) => {
       queryClient.invalidateQueries({ queryKey: ["chatBody"] }); // It refresh the new message in ChatBody component
       queryClient.invalidateQueries({ queryKey: ["chatList"] }); // It refresh the new message in ChatList component
-      setIsFormOpen(false);
+      handleClick();
       navigate(`/chat/${newChat.id}`);
     },
   });
@@ -93,6 +95,7 @@ export default function FormCard() {
                   bgColor="green"
                   type="submit"
                   style={{ width: "40%" }}
+                  disabled={isButtonDisabled}
                 >
                   Crear
                 </Form.Button>

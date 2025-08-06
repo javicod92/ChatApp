@@ -7,6 +7,7 @@ export type PillButtonProps = {
   style?: React.CSSProperties;
   type?: "button" | "submit";
   handleClick?: () => void;
+  disabled?: boolean;
 };
 
 export default function PillButtonXL({
@@ -15,13 +16,17 @@ export default function PillButtonXL({
   style,
   type = "button",
   handleClick,
+  disabled,
 }: PillButtonProps) {
   return (
     <button
-      className={`${styles.buttonXlContainer} ${styles[bgColor]}`}
+      className={`${styles.buttonXlContainer} ${styles[bgColor]} ${
+        disabled ? styles.disabled : ""
+      }`}
       style={style}
       type={type}
       onClick={handleClick}
+      disabled={disabled}
     >
       {children}
     </button>

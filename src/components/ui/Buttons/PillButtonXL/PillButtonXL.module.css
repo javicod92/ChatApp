@@ -27,7 +27,13 @@
   color: white;
 }
 
-.buttonXlContainer:hover {
+.buttonXlContainer:not(.disabled):hover {
   background-color: rgb(41, 41, 41);
   color: white;
+}
+
+.disabled {
+  background: none;
+  border: 1px solid #ccc;
+  color: #ccc;
 }
