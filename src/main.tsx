@@ -8,6 +8,8 @@ import Chat from "./pages/Chat";
 import Home from "./pages/Home";
 import Layout from "./layouts";
 import "./styles/global.css";
+import { queryClient, QueryClientProvider } from "./lib/react-query";
+import FormProvider from "./providers/FormProvider";
 
 export function App() {
   return (
@@ -28,8 +30,12 @@ export function App() {
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     {/* <IconGallery /> */}
-    <SidebarProvider>
-      <App />
-    </SidebarProvider>
+    <QueryClientProvider client={queryClient}>
+      <FormProvider>
+        <SidebarProvider>
+          <App />
+        </SidebarProvider>
+      </FormProvider>
+    </QueryClientProvider>
   </StrictMode>
 );

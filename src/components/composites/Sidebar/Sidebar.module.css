@@ -5,6 +5,7 @@
   padding: 10px 12px;
   position: relative;
   z-index: 200;
+  border-right: solid 1px var(--conversation-header-border);
 }
 
 .sidebarContent {

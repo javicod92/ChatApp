@@ -73,4 +73,10 @@
   font-size: 1rem;
   right: 0;
   bottom: -1px;
+  display: flex;
+  gap: 2px;
+}
+
+.readCheck {
+  color: var(--message-status-read);
 }

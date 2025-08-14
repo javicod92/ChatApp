@@ -1,0 +1,45 @@
+.formInput {
+  display: flex;
+  flex-direction: column;
+  color: #353535;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.formInput label {
+  font-weight: 400;
+  font-size: 1em;
+  color: #555555;
+}
+
+.formInput input {
+  width: 100%;
+  font-weight: 400;
+  font-size: 1em;
+  background: none;
+  color: #1d1d1d;
+  border-bottom: 2px solid #c8cec3;
+  outline: none;
+  transition: border 0.2s ease-in-out;
+  caret-color: #57b400;
+}
+
+.formInput input::placeholder {
+  font-style: italic;
+}
+
+.formInput input:focus-within {
+  border-bottom-color: #57b400;
+}
+
+.formInput input:-webkit-autofill,
+.formInput input:-webkit-autofill:focus,
+.formInput input:-webkit-autofill:hover,
+.formInput input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+  box-shadow: 0 0 0 1000px #fff inset !important;
+  background-color: #fff !important;
+  color: #1d1d1d !important;
+  -webkit-text-fill-color: #1d1d1d !important;
+  transition: background-color 5000s ease-in-out 0s;
+}

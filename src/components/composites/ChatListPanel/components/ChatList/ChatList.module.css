@@ -1,5 +1,5 @@
 .listContainer {
-  padding-top: 4px;
+  padding: 4px 0;
   scrollbar-color: rgba(var(--white-rgb), 0.1) transparent;
   overflow-y: auto;
   background-color: var(--chat-list-bg);

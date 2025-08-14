@@ -1,14 +1,24 @@
-import ChatCard from "../ChatCard";
-import { whatsappChats } from "../../../../../data/userData.ts";
+import formatTimestampForChat from "../../../../../utils/formatTimestampForChat.ts";
+import type { chatsDBProps } from "../../../../../types/chat.ts";
+import { chatService } from "../../../../../data/service.ts";
+import { useSuspenseQuery } from "@tanstack/react-query";
 import styles from "./ChatList.module.css";
+import ChatCard from "../ChatCard";
 
 type ChatListProps = {
   searchTerm: string;
 };
 
 export default function ChatList({ searchTerm }: ChatListProps) {
-  const filteredChats = whatsappChats.filter((chat) =>
-    chat.contactName.toLowerCase().includes(searchTerm.toLowerCase())
+  const loadChats = () => chatService.getAllChats();
+
+  const { data: chatList } = useSuspenseQuery({
+    queryKey: ["chatList"],
+    queryFn: loadChats,
+  });
+
+  const filteredChats = chatList?.filter((chat: chatsDBProps) =>
+    chat.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   // Function used to highlight text
@@ -27,30 +37,28 @@ export default function ChatList({ searchTerm }: ChatListProps) {
   }
 
   return (
-    <div className={styles.listContainer}>
-      <div className={styles.list}>
-        {!filteredChats.length ? (
-          <div className={styles.warningContainer}>
-            <span>{`No hay coincidencias con: "${searchTerm.trim()}"`}</span>
-          </div>
-        ) : (
-          filteredChats.map((chat) => (
-            <ChatCard
-              key={chat.id}
-              id={chat.id}
-              avatarURL={chat.userAvatar}
-              userName={highlightText(chat.contactName, searchTerm)}
-              userChatDate={
-                chat.chatHistory[chat.chatHistory.length - 1].timestamp
-              }
-              userLastMessage={
-                chat.chatHistory[chat.chatHistory.length - 1].text
-              }
-              messageStatus={chat.messageStatus}
-            />
-          ))
-        )}
-      </div>
-    </div>
+    <>
+      {!filteredChats?.length ? (
+        <div className={styles.warningContainer}>
+          <span>{`No hay coincidencias con: "${searchTerm.trim()}"`}</span>
+        </div>
+      ) : (
+        filteredChats.map((chat: chatsDBProps) => (
+          <ChatCard
+            key={chat.id}
+            id={chat.id}
+            avatarURL={chat.avatar}
+            userName={highlightText(chat.name, searchTerm)}
+            userChatDate={
+              formatTimestampForChat(
+                chat.messages[chat.messages.length - 1].timestamp
+              ).time
+            }
+            userLastMessage={chat.messages[chat.messages.length - 1].text}
+            messageStatus={chat.messages[chat.messages.length - 1].status}
+          />
+        ))
+      )}
+    </>
   );
 }

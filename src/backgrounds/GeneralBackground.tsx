@@ -1,18 +1,24 @@
-import { colorsPallette } from "./colorsPallette";
+import { backgroundPatterns, colorsPallette } from "./colorsPallette";
 import styles from "./GeneralBackground.module.css";
 
 type GeneralBackgroundProps = {
-  id: number;
+  colorId: number;
+  patternId: number;
 };
 
-export default function GeneralBackground({ id }: GeneralBackgroundProps) {
-  const background = colorsPallette[id].color;
+export default function GeneralBackground({
+  colorId,
+  patternId,
+}: GeneralBackgroundProps) {
+  const background = colorsPallette[colorId]?.color;
+  const patternUrl = backgroundPatterns[patternId]?.pattern;
 
   return (
     <div
       className={styles.backgroundContainer}
       style={{
-        background,
+        background: `${background}`,
+        maskImage: `url(${patternUrl})`,
       }}
     ></div>
   );

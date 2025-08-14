@@ -2,8 +2,11 @@ import { useRef } from "react";
 import { RoundedButton } from "../../../ui/Buttons";
 import { Expressions, PlusRounded, SendFilled } from "../../../ui/Icons";
 import styles from "./Footer.module.css";
+import { useMutation } from "@tanstack/react-query";
+import { chatService } from "../../../../data/service";
+import { queryClient } from "../../../../lib/react-query";
 
-export default function Footer() {
+export default function Footer({ chatId }: { chatId: number }) {
   const inputRef = useRef<HTMLDivElement>(null);
 
   const handleInput = (event: React.FormEvent<HTMLDivElement>) => {
@@ -13,24 +16,39 @@ export default function Footer() {
     }
   };
 
-  /* I use a single useRef because the text entered in the input element 
-  does not need to be processed. This avoids unnecessary Re-renders */
-  const handleSend = () => {
-    const message = inputRef.current?.innerText.trim();
-    if (message) {
-      alert(message);
+  const createMessageMutation = useMutation({
+    mutationFn: ({
+      chatId,
+      messageText,
+    }: {
+      chatId: number;
+      messageText: string;
+    }) => chatService.sendMessage(chatId, messageText),
+
+    /* I use a single useRef instead of useState, because the text entered in the input element 
+    does not need to be processed. This avoids unnecessary Re-renders */
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["chatBody"] }); // It refresh the new message in ChatBody component
+      queryClient.invalidateQueries({ queryKey: ["chatList"] }); // It refresh the new message in ChatList component
       inputRef.current!.innerText = "";
       inputRef.current?.focus();
-    }
+    },
+  });
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const message = inputRef.current?.innerText.trim();
+    if (!message) return;
+    createMessageMutation.mutate({ chatId: chatId, messageText: message });
   };
 
   return (
-    <div className={styles.footerContainer}>
-      <RoundedButton aria-label="Attach files">
+    <form className={styles.footerContainer} onSubmit={handleSubmit}>
+      <RoundedButton aria-label="Attach files" type="button">
         <PlusRounded />
       </RoundedButton>
 
-      <RoundedButton aria-label="Add expressions">
+      <RoundedButton aria-label="Add expressions" type="button">
         <Expressions />
       </RoundedButton>
 
@@ -45,9 +63,9 @@ export default function Footer() {
         tabIndex={0}
       ></div>
 
-      <RoundedButton aria-label="Send message" handleClick={handleSend}>
+      <RoundedButton aria-label="Send message" type="submit">
         <SendFilled />
       </RoundedButton>
-    </div>
+    </form>
   );
 }

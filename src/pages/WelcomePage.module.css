@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-left: 1px solid var(--conversation-header-border);
+  border-right: 1px solid var(--conversation-header-border);
 }
 
 .welcomeContainer img {
